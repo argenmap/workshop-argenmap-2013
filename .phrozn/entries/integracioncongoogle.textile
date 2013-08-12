@@ -7,9 +7,11 @@
 
 h2. Integración con mapas de Google preexistentes
 
-En la sección <notextile><a href="partesdelmapa.html">1.2.4: ¿Por qué el mapa dice Google Maps?</a></notextile> te mostramos como Argenmap almacena un objeto mapa a través de <code>jQuery.data()</code> en $(SELECTOR).data('argenmap').gmap
+En la sección <notextile><a href="partesdelmapa.html">1.2.4: ¿Por qué el mapa dice Google Maps?</a></notextile> te mostramos como *Argenmap* almacena un objeto mapa a través de <code>jQuery.data()</code> en $(SELECTOR).data('argenmap').gmap
 
 Gracias a esta funcionalidad, los sitios que usan actualmente un mapa de Google, pueden reemplazar rápidamente ese mapa por uno de *Argenmap*.
+
+h3. 5.1 Ejemplo funcional
 
 Imaginemos este ejemplo:
 
@@ -41,7 +43,7 @@ pre. ...
 var map = new google.maps.Map(document.getElementById('mapa'),opciones);
 ...
 
-Podemos ver como el mapa se almacena en una variable <code>map</code> y luego se utiliza para configurar y abrir un <code>InfoWindow</code>. Ahora lo único que tenemos que hacer es, en lugar de crear un mapa de Google, crear un mapa con *Argenmap* y luego asignar esa misma variable (<code>map</code>) al mapa que crea internamente *Argenmap*.
+bq. Podemos ver como el mapa se almacena en una variable <code>map</code> y luego se utiliza para configurar y abrir un <code>InfoWindow</code>. Ahora lo único que tenemos que hacer es, en lugar de crear un mapa de Google, crear un mapa con *Argenmap* y luego asignar esa misma variable (<code>map</code>) al mapa que crea internamente *Argenmap*.
 
 pre. ...
 //creamos el mapa con las mismas opciones que antes, pero en una sola línea ;)
@@ -52,10 +54,28 @@ var map = $('#mapa').data('argenmap').gmap;
 
 Listo, nuestro mapa ahora se instancia con *Argenmap* y podemos visualizarlo con los datos oficiales de la República Argentina
 
+h3. 5.2 Ejercicio
+
+* Hacé click en *Javascript*
+
+* Comentá la línea que empieza con <code>var map = new google.maps...</code>
+
+* Des-comentá las líneas que empiezan con <code>$('#mapa').argenmap...</code> y <code>var map = $('#mapa').data...</code>
+
+* Mirá los resultados en el panel de la derecha
+
+<notextile>
+	<a class="jsbin-embed" href="http://jsbin.com/eduset/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</notextile>
+
+El código de cada sitio usando un mapa de google puede ser distinto, pero siempre hará referencia al objeto mapa de alguna forma y este puede ser extraído de la instancia interna de mapa de *Argenmap*, haciendo que reemplazar uno por otro sea extremadamente simple.
+
+Recordá que tenés más ejemplos para consultar en la <notextile><a href="http://ign.gob.ar/argenmap/argenmap.jquery/docs/ejemplos">documentación de Argenmap</a></notextile>
+
 <div class="prevnext">
   <notextile>
     <p style="float:left">Anterior: <a href="agregar-capa-wms.html">4.2 Superponer una capa WMS</a></p>
-    <p style="float:right">Siguiente: <a href="conclusion.html">Conclusión</a></p>
+    <!--<p style="float:right">Siguiente: <a href="conclusion.html">Conclusión</a></p>-->
   </notextile>
 </div>
 </div>
