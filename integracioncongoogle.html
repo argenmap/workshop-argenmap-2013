@@ -77,9 +77,35 @@
 
 	<h2>Integración con mapas de Google preexistentes</h2>
 
-	<p>En la sección <a href="partesdelmapa.html">1.2.4: ¿Por qué el mapa dice Google Maps?</a> te mostramos como <strong>Argenmap</strong> almacena un objeto mapa a través de <code>jQuery.data()</code> en $(<span class="caps">SELECTOR</span>).data(&#8216;argenmap&#8217;).gmap</p>
+	<p>En la versión v1 de argenmap.jquery, suceden varias cosas cuando inicializamos el mapa:</p>
 
-	<p>Gracias a esta funcionalidad, los sitios que usan actualmente un mapa de Google, pueden reemplazar rápidamente ese mapa por uno de <strong>Argenmap</strong>.</p>
+	<ul>
+		<li>Se generan los elementos <span class="caps">HTML</span> necesarios para ubicar el mapa</li>
+	</ul>
+
+	<ul>
+		<li>Internamente, se genera un objeto <code>google.maps.Map</code> con la <span class="caps">API</span> de Google Maps y se almacena, a través de <code>jQuery.data()</code>, en <code>$(SELECTOR).data(&#39;argenmap&#39;).gmap</code>. (Esto cambia en la versión v2 de <strong>argenmap.jquery</strong> ya que no usa la base programática de Google Maps)</li>
+	</ul>
+
+	<ul>
+		<li>Se configuran las opciones por defecto (zoom, centro, capas base, proyección)</li>
+	</ul>
+
+	<p>Si quisieramos acceder a la instancia del mapa puede hacerse declarando una variable y asignarla de esta manera:</p>
+
+<pre>&#60;script type=&#34;text/javascript&#34;&#62;
+  $(&#34;#mapa&#34;).argenmap();
+  var map = $(&#39;#mapa&#39;).data(&#39;argenmap&#39;).gmap;
+&#60;/script&#62;
+</pre>
+
+<blockquote>
+  <p>En definitiva, <strong>argenmap.jquery</strong> almacena un objeto <code>google.maps.Map</code> a través de <code>jQuery.data()</code> en <code>$(SELECTOR).data(&#39;argenmap&#39;).gmap</code> y este objeto
+  es el que importa si necesitás migrar una app basada en Google Maps a un mapa con datos oficiales de Argentina.
+  </p>
+</blockquote>
+
+	<p>Gracias a esta funcionalidad, los sitios que usan actualmente un mapa de Google, pueden reemplazar rápidamente ese mapa por uno de <strong>argenmap.jquery</strong>.</p>
 
 	<h3>5.1 Ejemplo funcional</h3>
 
@@ -151,9 +177,9 @@ var map = $(&#39;#mapa&#39;).data(&#39;argenmap&#39;).gmap;
 	<a class="jsbin-embed" href="http://jsbin.com/eduset/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 </p>
 
-	<p>El código de cada sitio usando un mapa de google puede ser distinto, pero siempre hará referencia al objeto mapa de alguna forma y este puede ser extraído de la instancia interna de mapa de <strong>Argenmap</strong>, haciendo que reemplazar uno por otro sea extremadamente simple.</p>
+	<p>El código de cada sitio usando un mapa de Google puede ser distinto, pero siempre hará referencia al objeto mapa de alguna forma y este puede ser extraído de la instancia interna de mapa de <strong>Argenmap</strong>, haciendo que reemplazar uno por otro sea extremadamente simple.</p>
 
-	<p>Recordá que tenés más ejemplos para consultar en la <a href="http://ign.gob.ar/argenmap/argenmap.jquery/docs/ejemplos">documentación de Argenmap</a></p>
+	<p>Recordá que tenés más ejemplos para consultar en la <a target="_blank" href="http://ign.gob.ar/argenmap/argenmap.jquery/docs/ejemplos.html">documentación de Argenmap</a></p>
 
 <div class="prevnext">
   

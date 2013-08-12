@@ -7,9 +7,28 @@
 
 h2. Integración con mapas de Google preexistentes
 
-En la sección <notextile><a href="partesdelmapa.html">1.2.4: ¿Por qué el mapa dice Google Maps?</a></notextile> te mostramos como *Argenmap* almacena un objeto mapa a través de <code>jQuery.data()</code> en $(SELECTOR).data('argenmap').gmap
+En la versión v1 de argenmap.jquery, suceden varias cosas cuando inicializamos el mapa:
 
-Gracias a esta funcionalidad, los sitios que usan actualmente un mapa de Google, pueden reemplazar rápidamente ese mapa por uno de *Argenmap*.
+* Se generan los elementos HTML necesarios para ubicar el mapa
+
+* Internamente, se genera un objeto <code>google.maps.Map</code> con la API de Google Maps y se almacena, a través de <code>jQuery.data()</code>, en <code>$(SELECTOR).data('argenmap').gmap</code>. (Esto cambia en la versión v2 de *argenmap.jquery* ya que no usa la base programática de Google Maps)
+
+* Se configuran las opciones por defecto (zoom, centro, capas base, proyección)
+
+Si quisieramos acceder a la instancia del mapa puede hacerse declarando una variable y asignarla de esta manera:
+
+pre. <script type="text/javascript">
+  $("#mapa").argenmap();
+  var map = $('#mapa').data('argenmap').gmap;
+</script>
+
+<blockquote>
+  <p>En definitiva, *argenmap.jquery* almacena un objeto <code>google.maps.Map</code> a través de <code>jQuery.data()</code> en <code>$(SELECTOR).data('argenmap').gmap</code> y este objeto
+  es el que importa si necesitás migrar una app basada en Google Maps a un mapa con datos oficiales de Argentina.
+  </p>
+</blockquote>
+
+Gracias a esta funcionalidad, los sitios que usan actualmente un mapa de Google, pueden reemplazar rápidamente ese mapa por uno de *argenmap.jquery*.
 
 h3. 5.1 Ejemplo funcional
 
@@ -68,9 +87,9 @@ h3. 5.2 Ejercicio
 	<a class="jsbin-embed" href="http://jsbin.com/eduset/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 </notextile>
 
-El código de cada sitio usando un mapa de google puede ser distinto, pero siempre hará referencia al objeto mapa de alguna forma y este puede ser extraído de la instancia interna de mapa de *Argenmap*, haciendo que reemplazar uno por otro sea extremadamente simple.
+El código de cada sitio usando un mapa de Google puede ser distinto, pero siempre hará referencia al objeto mapa de alguna forma y este puede ser extraído de la instancia interna de mapa de *Argenmap*, haciendo que reemplazar uno por otro sea extremadamente simple.
 
-Recordá que tenés más ejemplos para consultar en la <notextile><a href="http://ign.gob.ar/argenmap/argenmap.jquery/docs/ejemplos">documentación de Argenmap</a></notextile>
+Recordá que tenés más ejemplos para consultar en la <notextile><a target="_blank" href="http://ign.gob.ar/argenmap/argenmap.jquery/docs/ejemplos.html">documentación de Argenmap</a></notextile>
 
 <div class="prevnext">
   <notextile>

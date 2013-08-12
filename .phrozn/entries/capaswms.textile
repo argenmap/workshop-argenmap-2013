@@ -12,7 +12,7 @@ h1(#4). 4. Capas WMS
 * Proyección *EPSG:3857*, *EPSG:900913*
 * formato mime <code>image/jpeg</code>, <code>image/png</code>
 
-En este módulo veremos los métodos necesarios para importar capas WMS de IDERA a modo de ejemplo, pero los mismos ejemplos son válidos para cualquier servicio WMS.
+En este módulo veremos los métodos necesarios para superponer capas WMS de IDERA a modo de ejemplo, pero los mismos ejemplos son válidos para cualquier servicio WMS.
 
 También veremos una breve introducción a los servicios WMS.
 

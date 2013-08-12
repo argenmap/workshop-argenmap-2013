@@ -26,9 +26,17 @@ En este caso vamos a usar el servicio WMS de la IDE de Formosa para que sirva de
 
 bq. http://idef.formosa.gob.ar/servicios/ows?service=wms&version=1.3.0&request=GetCapabilities
 
-Esta es una llamada al servidor que nos devuelve un XML con las prestaciones del servidor. En este XML podés ver las proyecciones (Capability.Layer.CRS), las capas disponibles (Capability.Layer.Layer), los formatos en los que puede servir (Capability.Request.GetMap.Format) y, fundamentalmente, la URL donde hacer el pedido WMS: *Capability.Request.GetMap.DCPType.HTTP.Get.OnlineResource:href*
+Esta es una llamada al servidor que nos devuelve un XML con las prestaciones del servidor. En este XML podés ver detalles de:
 
-Ahora que sabemos lo básico del servicio WMS y para qué usarlo, veamos como se importa una capa WMS.
+* las proyecciones que soporta el servicio (Capability.Layer.CRS)
+
+* las capas disponibles (Capability.Layer.Layer)
+
+* los formatos en los que puede servir (Capability.Request.GetMap.Format)
+
+* y, fundamentalmente, la URL donde hacer el pedido WMS: *Capability.Request.GetMap.DCPType.HTTP.Get.OnlineResource:href*
+
+Ahora que sabemos lo básico del servicio WMS y para qué usarlo, veamos cómo se importa una capa WMS.
 
 <div class="prevnext">
   <notextile>

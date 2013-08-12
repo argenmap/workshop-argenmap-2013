@@ -98,9 +98,25 @@
 		<p>http://idef.formosa.gob.ar/servicios/ows?service=wms&version=1.3.0&request=GetCapabilities</p>
 	</blockquote>
 
-	<p>Esta es una llamada al servidor que nos devuelve un <span class="caps">XML</span> con las prestaciones del servidor. En este <span class="caps">XML</span> podés ver las proyecciones (Capability.Layer.<span class="caps">CRS</span>), las capas disponibles (Capability.Layer.Layer), los formatos en los que puede servir (Capability.Request.GetMap.Format) y, fundamentalmente, la <span class="caps">URL</span> donde hacer el pedido WMS: <strong>Capability.Request.GetMap.DCPType.<span class="caps">HTTP</span>.Get.OnlineResource:href</strong></p>
+	<p>Esta es una llamada al servidor que nos devuelve un <span class="caps">XML</span> con las prestaciones del servidor. En este <span class="caps">XML</span> podés ver detalles de:</p>
 
-	<p>Ahora que sabemos lo básico del servicio <span class="caps">WMS</span> y para qué usarlo, veamos como se importa una capa <span class="caps">WMS</span>.</p>
+	<ul>
+		<li>las proyecciones que soporta el servicio (Capability.Layer.<span class="caps">CRS</span>)</li>
+	</ul>
+
+	<ul>
+		<li>las capas disponibles (Capability.Layer.Layer)</li>
+	</ul>
+
+	<ul>
+		<li>los formatos en los que puede servir (Capability.Request.GetMap.Format)</li>
+	</ul>
+
+	<ul>
+		<li>y, fundamentalmente, la <span class="caps">URL</span> donde hacer el pedido WMS: <strong>Capability.Request.GetMap.DCPType.<span class="caps">HTTP</span>.Get.OnlineResource:href</strong></li>
+	</ul>
+
+	<p>Ahora que sabemos lo básico del servicio <span class="caps">WMS</span> y para qué usarlo, veamos cómo se importa una capa <span class="caps">WMS</span>.</p>
 
 <div class="prevnext">
   

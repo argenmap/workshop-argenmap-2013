@@ -15,21 +15,21 @@ Un mapa de Google Maps estándar se arma en tu browser usando los siguientes rec
 
 * Los mapas base basados en datos vectoriales. (la capa TERRAIN, ROADMAP y los topónimos sobre la imagen satelital)
 
-h3. Qué es lo que argenmap.jquery aprovecha de Google Maps.
+h3. Qué es lo que argenmap.jquery aprovecha de Google Maps
 
-h4. La librería javascript. 
+h4. La librería javascript 
 
 *argenmap.jquery* construye el mapa utilizando la librería Google Maps API pero, de manera predeterminada desactiva los datos vectoriales de Google Maps y superpone dos capas de datos que provienen desde servidores del IGN y que contienen datos oficiales y datos libres de OpenStreetMap. Ésto se logra usando algunas facilidades de la API de Google.
 
 De esta manera, un mapa de *Argenmap* ofrece topónimos y límites apropiados para los intereses de la soberanía nacional.
 
-h4. Las imágenes satelitales. 
+h4. Las imágenes satelitales.
 
 *argenmap.jquery* se encarga de que cada vez que el usuario cambie al mapa satelital, los topónimos del IGN se superpongan sobre las imágenes de Google, permitiendo contrastar el territorio nacional en vista satelital, con los datos que el IGN produce.
 
 h3. A futuro
 
-h4. Transición. 
+h4. Transición hacia la desgooglización de los mapas web de la A.P.N. 
 
 La idea es que los usuarios de *argenmap.jquery* se acostumbren a la API de *argenmap.jquery v1* y puedan hace la transición a la versión *argenmap.jquery v2* que no usa la API de Google. 
 

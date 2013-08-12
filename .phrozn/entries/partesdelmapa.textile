@@ -131,25 +131,11 @@ Vamos a probar con el nivel de zoom <code>9</code>.
 
 h3. 1.2.4 ¿Por qué el mapa dice Google Maps?
 
-En la versión v1 de argenmap.jquery, suceden varias cosas cuando inicializamos el mapa:
+La base programática de *argenmap.jquery v1* es la librería Google Maps API. Podés ver más detalle en "Relación entre argenmap.jquery y Google Maps API":argenmapygooglemapsapi.html.
 
-* Se generan los elementos HTML necesarios para ubicar el mapa
-* Se crea una instancia de clase Argenmap, que provee los métodos para controlar el mapa
-* Internamente, se genera un mapa con la API de Google y se almacena, a través de jQuery.data(), en $(SELECTOR).data('argenmap').gmap. (Esto cambia en la versión v2 de argenmap.jquery ya que no usa la base programática de Google Maps)
-* Se configuran las opciones por defecto (zoom, centro, capas base, proyección)
+p. Esta es la anatomía de un mapa de Argenmap. 
 
-Si quisieramos acceder a la instancia del mapa puede hacerse declarando una variable y asignarla de esta manera:
-
-pre. <script type="text/javascript">
-  $(document).ready(function(){
-    $("#mapa").argenmap();
-    var mapa = $('#mapa').data('argenmap').gmap;
-  });
-</script>
-
-p. Esta es la anatomía de un mapa de Argenmap. En el siguiente módulo te mostraremos cómo agregar capas y marcadores.
-
-Para seguir entendiendo toda la funcionalidad o mayores personalizaciones podés ver los recursos disponibles de documentación.
+Para seguir entendiendo toda la funcionalidad y la diferencia entre *argenmap.jquery* y Google Maps API podés continuar leyendo acerca de las <a href="capasbase.html">Capas base de Argenmap </a>.
 
 <div class="prevnext">
   <notextile>
