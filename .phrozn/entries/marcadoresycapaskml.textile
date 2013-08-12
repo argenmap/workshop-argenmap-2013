@@ -1,0 +1,24 @@
+<div class="content">
+
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li class="active"><a href="#">Trabajando con marcadores y capas KML</a></li>
+</ul>
+
+h2(#1). 2. Trabajando con marcadores y capas KML
+
+*argenmap.jquery* permite superponer sobre el mapa diferentes recursos a partir de datos propios del programador..
+
+* "2.1. Agregar un marcador al centro del mapa":marcadorsimple.html
+
+* "2.2. Agregar un marcador personalizado":marcadorpersonalizado.html
+
+* "2.3. Superponer un archivo KML sobre el mapa":agregar-capa-kml.html
+
+<div class="prevnext">
+  <notextile>
+    <p style="float:left">Anterior: <a href="documentacionadicional.html">1.4 Documentación adicional</a></p>
+    <p style="float:right">Siguiente: <a href="marcadorsimple.html">2.1. Agregar un marcador al centro del mapa</a></p>
+  </notextile>
+</div>
+</div>

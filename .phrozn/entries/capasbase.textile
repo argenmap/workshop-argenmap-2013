@@ -1,0 +1,117 @@
+<div class="content">
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li><a href="conceptosbasicos.html">Conceptos básicos de argenmap.jquery</a> <span class="divider">/</span></li>
+ <li class="active"><a href="#">Capas base de Argenmap</a></li>
+</ul>
+
+h2. 1.3. Capas base de Argenmap
+
+Para visualizar correctamente un mapa, Argenmap ofrece, básicamente, dos capas base donde apoyar todos los datos
+
+* Capa <code>Mapa IGN</code>
+* Capa <code>satellite</code>
+
+<notextile>
+	<div class="row">
+<div class="span6">
+<h3>Capa "Mapa IGN"</h3>
+	<div style="height:300px" id="mapabase"></div>
+</div>
+<div class="span6">
+<h3>Capa "satellite"</h3>
+	<div style="height:300px" id="mapasat"></div>
+</div>
+	</div>
+</notextile>
+
+
+h3. 1.3.1. Capa "Mapa IGN"
+
+El <strong>Mapa IGN</strong> es una capa de datos consolidada con los datos del Instituto Geográfico Nacional y datos de <a target="_blank" href="http://www.openstreetmap.org">OpenStreetMap</a> para el nivel de calles.
+
+No es la usual composición de capas por nivel de escala, está compuesta por una estilización de diseño para visualizar los datos de manera concreta y agradable a la vista.
+
+<notextile>
+	<div id="mapabase2" style="height:300px"></div>
+</notextile>
+
+Este es el mapa predeterminado para una instancia de argenmap. No es necesario usar ningún código extra para visualizar esta capa.
+
+h3. 1.3.2. Capa "satellite". Mapa satelital con datos oficiales IGN
+
+El mapa satelital tiene el mismo trabajo que la capa del <strong>Mapa IGN</strong>, pero está preparada para ser superpuesta con imágenes satelitales de fondo.
+
+<notextile>
+	<div id="mapasat2" style="height:300px"></div>
+</notextile>
+
+h3. 1.3.3. Seleccionando una capa base
+
+Ambas capas pueden seleccionarse desde el menú descolgable ubicado arriba a la derecha del mapa.
+
+Pero también podés cambiar de capa base por código, tanto al inicializar el mapa como en cualquier otro momento que lo necesites.
+
+Para cambiar de capa base usamos el método <code>.capaBase()</code>.
+
+Podés llamar a <code>.capaBase()</code> sobre el mismo selector en el que instanciaste tu mapa. Si no proveés argumentos, <code>.capaBase()</code> te devolverá la capa base actual. Si le pasás el nombre de una de las capas base como argumento, el mapa cambiará a la capa base que le hayas indicado.
+
+pre. <script type="text/javascript">
+  $(document).ready(function(){
+    //instancia normal
+    $("#mapa").argenmap();
+    //
+    alert($('#mapa').capaBase());
+    //devuelve "Mapa IGN"
+    //
+    $('#mapa').capaBase('satellite');
+    //cambia la capa base a satelital
+  });
+</script>
+
+p. Los valores para cambiar las capas base son:
+
+* <code>Mapa IGN</code>
+* <code>satellite</code>
+
+<blockquote>
+<p>Es importante respetar mayúsculas y minúsculas, de lo contrario no obtendrás el resultado esperado.</p>
+</blockquote>
+
+h3. Ejercicio
+
+Siguiendo el ejemplo básico anterior, podés probar cambiar de capas base o preguntar cuál es la capa base actual.
+
+En el ejemplo las líneas están comentadas (es decir, <em>anuladas</em>) con doble barra (//). Podés borrar las barras para que el código surta efecto.
+
+* Hacé click en *HTML*.
+
+* Buscá la línea que dice <code>//$('#mapa').capaBase('satellite');</code>
+
+* Borrá las dos barras, de manera de que el código quede <em>descomentado</em> y el cambio de capa base surta efecto.
+
+* Mirá el resultado en el panel de la derecha
+
+<notextile>
+  <a class="jsbin-embed" href="http://jsbin.com/ilalur/4/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</notextile>
+
+<div class="prevnext">
+  <notextile>
+    <p style="float:left">Anterior: <a href="partesdelmapa.html">1.2. Partes del mapa</a></p>
+    <p style="float:right">Siguiente: <a href="documentacionadicional.html">1.4. Documentación adicional</a></p>
+  </notextile>
+</div>
+
+</div>
+
+<notextile>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#mapabase').argenmap();  
+  $('#mapabase2').argenmap().zoom(10).centro(-41.05526074423462, -71.42897033691405);  
+  $('#mapasat2').argenmap().capaBase('satellite').zoom(10).centro(-41.05526074423462, -71.42897033691405);  
+  $('#mapasat').argenmap().capaBase('satellite');
+});
+</script>
+</notextile>

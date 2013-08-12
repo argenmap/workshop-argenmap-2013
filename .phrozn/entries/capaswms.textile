@@ -1,0 +1,29 @@
+<div class="content">
+
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li class="active"><a href="#">Capas WMS</a></li>
+</ul>
+
+h1(#4). 4. Capas WMS
+
+"*argenmap.jquery*":http://ign.gob.ar/argenmap/ puede importar capas WMS de cualquier servicio que soporte:
+
+* Proyección *EPSG:3857*, *EPSG:900913*
+* formato mime <code>image/jpeg</code>, <code>image/png</code>
+
+En este módulo veremos los métodos necesarios para importar capas WMS de IDERA a modo de ejemplo, pero los mismos ejemplos son válidos para cualquier servicio WMS.
+
+También veremos una breve introducción a los servicios WMS.
+
+* "4.1. Servicios WMS":servicios-wms.html
+
+* "4.2. Superponer una capa WMS":agregar-capa-wms.html
+
+<div class="prevnext">
+  <notextile>
+    <p style="float:left">Anterior: <a href="index.html">3. FALTA COMPLETAR</a></p>
+    <p style="float:right">Siguiente: <a href="servicios-wms.html">4.1 Servicios WMS</a></p>
+  </notextile>
+</div>
+</div>

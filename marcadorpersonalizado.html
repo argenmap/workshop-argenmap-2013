@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>argenmap - Garage Days</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Mapas del IGN para la web" name="description">
+        <meta name="author" content="osk">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- styles -->
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles/default.css">
+        <link href="http://www.ign.gob.ar/2013/css/bootstrap-ign.css" rel="stylesheet">
+
+        <!-- scripts -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="scripts/default.js"></script>
+        <!--Para poner lindo el código fuente-->        
+        <link rel="stylesheet" type="text/css" href="scripts/google-code-prettify/prettify.css">        
+        <script type="text/javascript" src="scripts/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="http://cdn3.1stwebdesigner.com/wp-content/uploads/2011/06/jquery-smoooth-scrolling/jquery.stoc.js"></script>
+        <style>
+            h3 {margin-top:38px;}
+            .divider {
+                background:none;
+            }
+            .prevnext {
+                border-top: 2px solid #ccc;
+                margin-top:2em;
+                margin-bottom:2em;
+            }
+
+            .footer {
+                background-color:#006dac;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar navbar-fixed-top" >
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="index.html">IGN - Argenmap - Workshop 2013</a>
+      <div class="nav-collapse collapse navbar-inverse-collapse">
+        <ul class="nav">
+          <li><a href="http://ign.gob.ar/argenmap/argenmap.jquery/docs">Documentación de argenmap</a></li>
+          <li><a href="soporte.html">Foro</a></li>          
+          <li><a href="http://jsbin.com/ekigit/7/edit" target="_blank" style="color:orange;background:inherit">Practicá !</a></li>
+          <li><a href="acercade.html">Acerca de...</a></li>
+        </ul>
+        <form class="navbar-form pull-left" action="buscar.html" method=get>
+          <input type="text" class="search-query span2" title="término a buscar" name="q" placeholder="Buscar en las docs">
+          <button type="submit" title="botón de formulario" class="btn">Buscar</button>
+        </form>
+      </div><!-- /.nav-collapse -->
+    </div>
+  </div><!-- /navbar-inner -->
+</div>
+        <div class="container">
+
+            	<p><div class="content"></p>
+
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li><a href="marcadoresycapaskml.html">Trabajando con marcadores y capas KML</a> <span class="divider">/</span></li>
+ <li class="active"><a href="#">Agregar un marcador personalizado</a></li>
+</ul>
+
+	<h2>2.2. Agregar un marcador personalizado al mapa</h2>
+
+	<p>Los marcadores personalizados se configuran pasándole un parámetro a la funcion<code>agregarMarcador()</code>.</p>
+
+	<p>La función acepta como parámetro un objeto javascript <code>agregarMarcador({ ... })</code>.</p>
+
+	<p>El objeto puede tener las siguientes propiedades:</p>
+
+<pre>{
+  lat: ...,
+  lng: ...,
+  nombre: ...,
+  contenido: ...,
+  icono: ...,
+}
+</pre>
+
+	<h3>2.2.1 Descripción de las propiedades de un marcador</h3>
+
+	<p><dl class="well">
+  <dt>lat</dt>
+  <dd><em>Obligatorio</em>. La <strong>latitud</strong> en grados con notación decimal.</dd>
+  <dt>lng</dt>
+  <dd><em>Obligatorio</em>. La <strong>longitud</strong> en grados con notación decimal.</dd>  
+  <dt>nombre</dt>
+  <dd><em>Obligatorio</em>. Un identificador para el marcador. Es importante ponerle un <strong>nombre</strong> ya que
+    este nombre lo identifica para otras acciones programáticas como por ejemplo, el uso de los métodos <code>quitarMarcador()</code> o <code>modificarMarcador()</code> que reciben como parámetro, el <strong>nombre</strong> del marcador a afectar.</dd>    
+  <dt>contenido</dt>
+  <dd><em>Opcional</em>. Este texto es el que se desplegará al hacer click sobre el marcador para que el usuario del mapa reciba mayor información acerca de lo que representa el marcador.<br/>
+    <strong>Este texto puede ser HTML</strong>.</dd>
+  <dt>icono</dt>
+  <dd><em>Opcional</em>. La <span class="caps">URL</span> de una imagen que ya esté online. Esta imagen va a ser el ícono que represente al marcador sobre el mapa.</dd>        <br />
+</dl></p>
+
+	<h4>Ejemplo funcional 1</h4>
+
+<pre>var marcador = {
+  lat: -32.5,
+  lng: -58.5,
+  nombre: &#39;Mi marcador de prueba&#39;,
+  contenido: &#39;Hola Mundo!&#39;,
+  icono: &#39;https://cdn3.iconfinder.com/data/icons/fatcow/32/flag_red.png&#39;
+};
+$(&#39;#mapa&#39;).agregarMarcador( marcador );
+</pre>
+
+<blockquote>
+  <p>
+    Es importante recordar cuáles de las propiedades del marcador son <strong>obligatorias</strong> y cuáles <strong>opcionales</strong> para asegurar que se vea el marcador.
+  </p>
+</blockquote>
+
+	<h3>Ejercicio 1</h3>
+
+	<p>Vamos a generar un marcador sobre el mapa.</p>
+
+	<ul>
+		<li>Hacé click en el botón &#8220;Javascript&#8221;.</li>
+	</ul>
+
+	<ul>
+		<li>Copiá el texto del <em>Ejemplo Funcional 1</em> y pegalo en el editor en la sección Javascript <strong>debajo</strong> de la línea que dice <code>(&#34;#mapa&#34;).argenmap().centro(-31,-59).zoom(6);</code>.</li>
+	</ul>
+
+	<ul>
+		<li>Mirá el resultado en el panel de la derecha. El mapa muestra un marcador con una banderita roja sobre la coordenada 31ºS 59ºO.</li>
+	</ul>
+
+	<p>
+  <a class="jsbin-embed" href="http://jsbin.com/aselaq/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+	<h3>Ejercicio 2</h3>
+
+	<p>Ahora vamos a hacer un marcador sobre el mapa, pero simplificando las líneas de código.<br />
+<blockquote><br />
+<p><br />
+Es decir, en lugar de crear un objeto en una variable <code>marcador</code> como en el ejercicio anterior, vamos a pasarle a <code>agregarMarcador()</code> la definición del marcador directamente a la función.<br />
+</p><br />
+</blockquote></p>
+
+	<h4>Ejemplo funcional 2</h4>
+
+<pre>$(&#39;#mapa&#39;).agregarMarcador({
+  lat: -32.5,
+  lng: -58.5,
+  nombre: &#39;Mi segundo marcador&#39;,
+  contenido: &#39;Hola de nuevo!!&#39;,
+  icono: &#39;https://cdn2.iconfinder.com/data/icons/officeicons/PNG/48/Flag.png&#39;
+});
+</pre>
+
+	<ul>
+		<li>Hacé click en el botón &#8220;Javascript&#8221;.</li>
+	</ul>
+
+	<ul>
+		<li>Copiá el texto del <em>Ejemplo Funcional 2</em> y pegalo en el editor en la sección Javascript <strong>debajo</strong> de la línea que dice <code>(&#34;#mapa&#34;).argenmap().centro(-31,-59).zoom(6);</code>.</li>
+	</ul>
+
+	<ul>
+		<li>Mirá el resultado en el panel de la derecha.</li>
+	</ul>
+
+	<p>
+  <a class="jsbin-embed" href="http://jsbin.com/aselaq/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+	<h3>Ejercicio 3</h3>
+
+	<p>Ya que <strong>argenmap.jquery</strong> es un plugin de jQuery, podemos hacer todo lo que aprendimos hasta ahora en una sóla línea de código. Quedará desprolija pero en este ejercicio vamos a probar esto.</p>
+
+	<h4>Ejemplo funcional 3</h4>
+
+<pre>$(&#39;#mapa&#39;).argenmap().centro(-34.5721, -58.4399).zoom(15).agregarMarcador({ contenido:&#39;Éste es el IGN&#39; });
+</pre>
+
+	<ul>
+		<li>Hacé click en el botón &#8220;Javascript&#8221;.</li>
+	</ul>
+
+	<ul>
+		<li>Copiá el texto del <em>Ejemplo Funcional 3</em> y pegalo en el editor en la sección Javascript <strong>dentro</strong> de la función que recibe .ready() como parámetro.</li>
+	</ul>
+
+	<ul>
+		<li>Mirá el resultado en el panel de la derecha.</li>
+	</ul>
+
+	<p>
+  <a class="jsbin-embed" href="http://jsbin.com/ocidug/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+<blockquote>
+</blockquote>
+
+<hr/>
+
+	<p>Ahora que dominamos el manejo de marcadores, pasamos a ver cómo podemos <a href="agregar-capa-kml.html">Superponer un archivo <span class="caps">KML</span> sobre el mapa</a>.</p>
+
+<div class="prevnext">
+  
+    <p style="float:left">Anterior: <a href="marcadorsimple.html">2.1 Agregar un marcador al centro del mapa</a></p>
+    <p style="float:right">Siguiente: <a href="agregar-capa-kml.html">2.3. Superponer un archivo KML sobre el mapa</a></p>
+  
+</div>
+
+	<p></div></p>
+            <footer class="footer">
+	<div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <div>
+          <a alt="Sitio del IGN de Argentina" href="http://www.ign.gob.ar"><img alt="Logo del instituto Geográfico Nacional de Argentina" style="max-height:100px" src="http://www.ign.gob.ar/sites/default/files/logo2012blanco.png"/></a>
+        </div>    
+          <p><strong>argenmap</strong> es un servicio web del <a href="http://www.ign.gob.ar" target="_blank">Instituto Geográfico Nacional</a> de la República Argentina.</p>
+
+          <p>El código de argenmap.jquery está disponible bajo una <a href="http://www.ign.gob.ar/argenmap/argenmap.jquery/LICENCIA" target="_blank">licencia</a> basada en la BSD.</p>
+      </div>
+    </div>
+	</div>
+</footer>
+            
+        </div>
+        <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+        <script type="text/javascript" src="http://www.ign.gob.ar/argenmap/argenmap.jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                //Hago lindos los pre con código
+                $('pre').addClass('prettyprint linenums');
+                prettyPrint();
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>argenmap - Garage Days</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Mapas del IGN para la web" name="description">
+        <meta name="author" content="osk">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- styles -->
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles/default.css">
+        <link href="http://www.ign.gob.ar/2013/css/bootstrap-ign.css" rel="stylesheet">
+
+        <!-- scripts -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="scripts/default.js"></script>
+        <!--Para poner lindo el código fuente-->        
+        <link rel="stylesheet" type="text/css" href="scripts/google-code-prettify/prettify.css">        
+        <script type="text/javascript" src="scripts/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="http://cdn3.1stwebdesigner.com/wp-content/uploads/2011/06/jquery-smoooth-scrolling/jquery.stoc.js"></script>
+        <style>
+            h3 {margin-top:38px;}
+            .divider {
+                background:none;
+            }
+            .prevnext {
+                border-top: 2px solid #ccc;
+                margin-top:2em;
+                margin-bottom:2em;
+            }
+
+            .footer {
+                background-color:#006dac;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar navbar-fixed-top" >
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="index.html">IGN - Argenmap - Workshop 2013</a>
+      <div class="nav-collapse collapse navbar-inverse-collapse">
+        <ul class="nav">
+          <li><a href="http://ign.gob.ar/argenmap/argenmap.jquery/docs">Documentación de argenmap</a></li>
+          <li><a href="soporte.html">Foro</a></li>          
+          <li><a href="http://jsbin.com/ekigit/7/edit" target="_blank" style="color:orange;background:inherit">Practicá !</a></li>
+          <li><a href="acercade.html">Acerca de...</a></li>
+        </ul>
+        <form class="navbar-form pull-left" action="buscar.html" method=get>
+          <input type="text" class="search-query span2" title="término a buscar" name="q" placeholder="Buscar en las docs">
+          <button type="submit" title="botón de formulario" class="btn">Buscar</button>
+        </form>
+      </div><!-- /.nav-collapse -->
+    </div>
+  </div><!-- /navbar-inner -->
+</div>
+        <div class="container">
+
+            	<p><div class="content"><br />
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li><a href="conceptosbasicos.html">Conceptos básicos de argenmap.jquery</a> <span class="divider">/</span></li>
+ <li class="active"><a href="#">Partes del mapa</a></li><br />
+</ul></p>
+
+	<h2>1.2. Partes del mapa</h2>
+
+	<p>Como se vio en la sección anterior, un mapa es generado uniendo código <span class="caps">HTML</span>, declaraciones de estilos y código de inicialización. Vamos a mirar cada una de esas partes un poco más en detalle.</p>
+
+	<h3>1.2.1. Código <span class="caps">HTML</span> del mapa</h3>
+
+	<p>El código <span class="caps">HTML</span> para el mapa del <a href="crear-un-mapa.html">ejemplo anterior</a> genera un sólo elemento en el documento:</p>
+
+<pre>&#60;div id=&#34;mapa&#34;&#62;&#60;/div&#62;
+</pre>
+
+	<p>Este elemento &lt;div&gt; servirá como contenedor para el mapa. <br />
+<blockquote>
+  <p>
+  Acá, usamos un elemento <code>&#60;div&#62;</code>, pero el contenedor del mapa puede ser cualquier elemento del tipo bloque.
+  </p>
+  <p>
+  En este caso, le damos al contenedor un atributo <strong>id</strong> así podemos hacer referencia a él fácilmente, desde otra parte del código.</p></blockquote></p>
+
+	<h3>1.2.2. Estilo del mapa</h3>
+
+	<p><strong>argenmap.jquery</strong> no adivina el alto de tu mapa. Por esto es que es necesario especificar por estilo cuál va a ser la altura que queremos que tenga el mapa, declarando la altura del contenedor por <span class="caps">CSS</span> utilizando la etiqueta <code>style</code>. haciendo referencia al div con <code>id=&#34;mapa&#34;</code> para definirle un alto (height).</p>
+
+<pre>&#60;style type=&#34;text/css&#34;&#62;
+  div#mapa {
+    height:315px;
+  }
+&#60;/style&#62;
+</pre>
+
+	<p>En este caso especificamos una altura de 315 píxeles pero no específicamos un ancho.</p>
+
+	<p>El comportamiento predeterminado de los bloques (como por ejemplo un div) es ocupar todo el ancho disponible (es decir, width=100%), por lo tanto podemos prescindir de la definición de un ancho para nuestro mapa y dejar que ocupe a lo ancho, lo que ocupa el elemento que lo contiene.</p>
+
+<blockquote>
+  <p>
+    En el ejemplo, definimos el estilo en la sección head, dentro de un <code>&#60;style&#62;&#60;/style&#62;</code>. Pero también podríamos hacerlo definiendo el estilo <strong>inline</strong> (<code>&#60;div id=&#34;mapa&#34; style=&#34;height:315px&#34;&#62;&#60;/div&#62;</code>) o en un archivo <span class="caps">CSS</span> aparte.
+  </p>
+</blockquote>
+
+	<h3>1.2.3. Código de inicialización del mapa</h3>
+
+	<p>El siguiente paso para generar el mapa es incluir algo de código javascript para construirlo. En nuestro caso, incluímos un elemento <code>&#60;script&#62;</code> en la sección <code>&#60;head&#62;</code> para que haga el trabajo:</p>
+
+<pre>&#60;script type=&#34;text/javascript&#34;&#62;
+  $(document).ready(function(){
+    $(&#34;#mapa&#34;).argenmap().centro(-32,-65).zoom(6);
+  });
+&#60;/script&#62;
+</pre>
+
+<blockquote>
+  <p>
+    Antes de que nuestro código de inicialización pueda ser ejecutado, las librerías <strong>jQuery</strong>, <strong>Google Maps API</strong> y <strong>argenmap.jquery</strong> tienen que haber sido cargadas. 
+  </p>
+  <p>
+  De manera similar, nuestro código de incialización no puede correr hasta que el elmento contenedor del mapa esté listo (en este caso <code>&#60;div id=&#34;mapa&#34;&#62;&#60;/div&#62;</code>) .
+  </p>
+</blockquote>
+
+	<h4>1.2.3.1. Análisis del código de inicialización</h4>
+
+	<p>Miremos en detalle lo que hace el script de inicialización. La primera línea del script usa la técnica jQuery para asegurarse de que la siguiente línea sea ejecutada cuando el documento ya esté cargado.</p>
+
+<pre>$(document).ready();
+</pre>
+
+	<p>En realidad, aquí tenemos dos llamadas a función. <code>$()</code> y <code>.ready()</code>. Esto es práctica común para quien usa jQuery y puede ser confuso para quienes se manejan puramente con javascript.</p>
+
+<blockquote>  
+  <p>
+   Al llamar al código de inicialización usando <code>$(document).ready()</code>, nos aseguramos de que las librerías ya estén cargadas y de que el contenedor del mapa ya esté listo para poder correr el código de inicalización. <em>Esta magia es por cortesía de jQuery y su método <a href="http://api.jquery.com/ready/">$.ready()</a></em>.
+  </p>
+</blockquote>
+
+	<p>Pero en definitiva, lo único que hace falta para hacer uso de esta funcionalidad de jQuery es escribir $(document).ready() y a la función ready() pasarle como parámetro, una función que es la que queremos que se ejecute al estar listo el documento.</p>
+
+	<p>Esto nos lleva al siguiente análsis.</p>
+
+	<p>La función <code>$.ready()</code> recibe lo siguiente:</p>
+
+<pre>function() { $(&#39;#mapa&#39;).argenmap().centro(-32,-65).zoom(6) }
+</pre>
+
+	<p>En esta misma línea hacemos 3 cosas</p>
+
+	<ul>
+		<li>Convertimos el <code>&#60;div&#62;</code> en un mapa de argenmap.</li>
+	</ul>
+
+	<ul>
+		<li>Centramos el mapa en latitud <em>32 grados Sur</em> y longitud <em>65 grados Oeste</em>.</li>
+	</ul>
+
+	<ul>
+		<li>Acercamos el mapa al nivel de zoom <code>6</code>.</li>
+	</ul>
+
+<blockquote>  
+  <p>
+   jQuery permite <em>encadenar</em> las llamadas a función sobre un objeto. Es por eso que una sóla línea podemos operar sobre el mapa para modificar su centro y su nivel de zoom.
+  </p>
+</blockquote>
+
+	<h3>Ejercicio</h3>
+
+	<p>En este ejercicio, vamos a practicar con las partes del mapa separadas. Las partes del código las encontrás en las pestañas <strong>HTML</strong>, <strong>CSS</strong> y <strong>Javascript</strong>.</p>
+
+	<h4>1. Cambiar el alto del mapa a 600px</h4>
+
+	<ul>
+		<li>Hacé click en <strong>CSS</strong>.</li>
+	</ul>
+
+	<ul>
+		<li>Modificá el valor <code>315px</code> y escribí <code>600px</code>.</li>
+	</ul>
+
+	<h4>2. Cambiar el centro del mapa</h4>
+
+	<p>Vamos a probar con  las coordenadas (latitud:-42.5, longitud: -67.3).</p>
+
+	<ul>
+		<li>Hacé click en <strong>JavaScript</strong>.</li>
+	</ul>
+
+	<ul>
+		<li>Cambiá el código que dice <code>centro(-32,-65)</code> para que quede: <code>centro(-42.5,-67.3)</code></li>
+	</ul>
+
+	<h4>2. Cambiar el nivel de zoom del mapa</h4>
+
+	<p>Vamos a probar con el nivel de zoom <code>9</code>.</p>
+
+	<ul>
+		<li>En la pestaña <strong>JavaScript</strong>, cambiá el código que dice <code>zoom(6)</code> para que quede: <code>zoom(9)</code></li>
+	</ul>
+
+	<p>
+  <a class="jsbin-embed" href="http://jsbin.com/uzuwij/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+	<h3>1.2.4 ¿Por qué el mapa dice Google Maps?</h3>
+
+	<p>En la versión v1 de argenmap.jquery, suceden varias cosas cuando inicializamos el mapa:</p>
+
+	<ul>
+		<li>Se generan los elementos <span class="caps">HTML</span> necesarios para ubicar el mapa</li>
+		<li>Se crea una instancia de clase Argenmap, que provee los métodos para controlar el mapa</li>
+		<li>Internamente, se genera un mapa con la <span class="caps">API</span> de Google y se almacena, a través de jQuery.data(), en $(<span class="caps">SELECTOR</span>).data(&#8216;argenmap&#8217;).gmap. (Esto cambia en la versión v2 de argenmap.jquery ya que no usa la base programática de Google Maps)</li>
+	</ul>
+	<ul>
+		<li>Se configuran las opciones por defecto (zoom, centro, capas base, proyección)</li>
+	</ul>
+
+	<p>Si quisieramos acceder a la instancia del mapa puede hacerse declarando una variable y asignarla de esta manera:</p>
+
+<pre>&#60;script type=&#34;text/javascript&#34;&#62;
+  $(document).ready(function(){
+    $(&#34;#mapa&#34;).argenmap();
+    var mapa = $(&#39;#mapa&#39;).data(&#39;argenmap&#39;).gmap;
+  });
+&#60;/script&#62;
+</pre>
+
+	<p>Esta es la anatomía de un mapa de Argenmap. En el siguiente módulo te mostraremos cómo agregar capas y marcadores.</p>
+
+	<p>Para seguir entendiendo toda la funcionalidad o mayores personalizaciones podés ver los recursos disponibles de documentación.</p>
+
+<div class="prevnext">
+  
+    <p style="float:left">Anterior: <a href="crear-un-mapa.html">1.1. Crear un mapa</a></p>
+    <p style="float:right">Siguiente: <a href="capasbase.html">1.3. Capas base de Argenmap </a></p>
+  
+</div>
+
+	<p></div><!--content--></p>
+            <footer class="footer">
+	<div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <div>
+          <a alt="Sitio del IGN de Argentina" href="http://www.ign.gob.ar"><img alt="Logo del instituto Geográfico Nacional de Argentina" style="max-height:100px" src="http://www.ign.gob.ar/sites/default/files/logo2012blanco.png"/></a>
+        </div>    
+          <p><strong>argenmap</strong> es un servicio web del <a href="http://www.ign.gob.ar" target="_blank">Instituto Geográfico Nacional</a> de la República Argentina.</p>
+
+          <p>El código de argenmap.jquery está disponible bajo una <a href="http://www.ign.gob.ar/argenmap/argenmap.jquery/LICENCIA" target="_blank">licencia</a> basada en la BSD.</p>
+      </div>
+    </div>
+	</div>
+</footer>
+            
+        </div>
+        <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+        <script type="text/javascript" src="http://www.ign.gob.ar/argenmap/argenmap.jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                //Hago lindos los pre con código
+                $('pre').addClass('prettyprint linenums');
+                prettyPrint();
+            })
+        </script>
+    </body>
+</html>

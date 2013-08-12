@@ -1,0 +1,34 @@
+<div class="content">
+
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li class="active"><a href="#">Conceptos básicos de argenmap.jquery</a></li>
+</ul>
+
+h1(#1). 1. Conceptos básicos de argenmap.jquery
+
+"argenmap.jquery":http://ign.gob.ar/argenmap/argenmap.jquery/docs es una librería javascript que sirve para construir aplicaciones con mapas en un browser.
+
+Este taller cubre los detalles de *argenmap.jquery v1* y da un pantallazo de la siguiente versión, "argenmap.jquery v2":http://ign.gob.ar/argenmap2/argenmap.jquery/docs basada en la librería OpenLayers.
+
+La librería permite integrar datos desde varias fuentes, ofrece una API amigable para usuarios familiarizados con jQuery y genera mapas compatibles con una alta gama de dispositivos (PC, mobile, tablets, etc).
+
+Este módulo presenta los conceptos de *argenmap.jquery* fundamentales para crear un mapa.
+
+En este módulo vas a crear un mapa, entender las partes del mapa y obtener links adicionales para mayor documentación.
+
+* "1.1. Crear un mapa":crear-un-mapa.html
+
+* "1.2. Partes del mapa":partesdelmapa.html
+
+* "1.3. Capas base de Argenmap":capasbase.html
+
+* "1.4. Documentación adicional":documentacionadicional.html
+
+<div class="prevnext">
+  <notextile>
+    <p style="float:left">Anterior: <a href="index.html">Taller Argenmap 2013</a></p>
+    <p style="float:right">Siguiente: <a href="crear-un-mapa.html">1.1. Crear un mapa</a></p>
+  </notextile>
+</div>
+</div>

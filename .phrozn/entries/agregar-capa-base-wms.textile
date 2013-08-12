@@ -1,0 +1,51 @@
+<div class="content">
+
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li><a href="capaswms.html">Capas WMS</a> <span class="divider">/</span></li>
+ <li class="active"><a href="#">Importar una capa base WMS</a></li>
+</ul>
+
+h2. 4.3 Importar una capa base WMS
+
+h3. 4.3.1 Configurar y pedir una capa base WMS
+
+Importar una capa base WMS es muy similar a agregar una capa WMS superpuesta, las diferencias son principalmente funcionales.
+
+Para importar una capa usás el método <code>.agregarCapaBaseWMS()</code>. Una de las grandes diferencias entre <code>.agregarCapaWMS()</code> y <code>.agregarCapaBaseWMS()</code> es que al agregar una capa base la misma sólo puede visualizarse cambiando la vista desde el menú desplegable de capas. Asimismo, la nueva capa base no tendrá ninguna otra capa superpuesta, por lo que, si querés visualizar otros datos, tendrás que agregarlos con más llamadas <code>.agregarCapaWMS()</code>
+
+<code>.agregarCapaBaseWMS()</code> recibe como parámetro un objeto simple de Javascript con las siguientes opciones:
+
+* url: es la url donde el servidor WMS recibe los pedidos. En el XML del pedido *GetCapabilities* podés verlo buscando el nodo *Capability.Request.GetMap.DCPType.HTTP.Get.OnlineResource:href*
+* capas: un <code>string</code> separado por comas con los nombres de las capas que querés pedir al servidor. Las capas están listadas en el XML en *Capability.Layer.Layer*, y de ahí tenés que usar la propiedad <code>Name</code>
+* nombre: es el nombre que se le dará a la capa base. Este nombre aparecerá en el menú desplegable arriba a la derecha del mapa. También te servirá para hacer referencia a la capa en caso que necesites quitarla.
+
+h3. 4.3.2 Ejercicio 
+
+* Consultá el servidor "WMS de formosa":http://idef.formosa.gob.ar/servicios/ows?service=wms&version=1.3.0&request=GetCapabilities
+
+* Hacé click en *Javascript* y pegá el siguiente código (recordá pegarlo *después* de inicializar el mapa)
+
+pre. $('#mapa').agregarCapaBaseWMS({
+  url:'',
+  capas:'',
+  nombre:''
+});
+
+* Configurá la capa que estás agregando con los datos que obtengas del XML del WMS de Formosa (url del servidor, nombre/s de capa/s a pedir)
+
+* Mirá el resultado en el panel de la derecha
+
+<code>For your pleasure:</code> ya ubicamos el mapa con centro en Formosa para que puedas visualizar la capa cuando la incorpores.
+
+<notextile>
+  <a class="jsbin-embed" href="http://jsbin.com/opuwap/2/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</notextile>
+
+<div class="prevnext">
+  <notextile>
+    <p style="float:left">Anterior: <a href="agregar-capa-wms.html">4.2 Importar una capa WMS</a></p>
+    <p style="float:right">Siguiente: <a href="agregar-capa-base-wms.html">4.3 Importar una capa base WMS</a></p>
+  </notextile>
+</div>
+</div>

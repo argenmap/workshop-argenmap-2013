@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>argenmap - Garage Days</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Mapas del IGN para la web" name="description">
+        <meta name="author" content="osk">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- styles -->
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles/default.css">
+        <link href="http://www.ign.gob.ar/2013/css/bootstrap-ign.css" rel="stylesheet">
+
+        <!-- scripts -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="scripts/default.js"></script>
+        <!--Para poner lindo el código fuente-->        
+        <link rel="stylesheet" type="text/css" href="scripts/google-code-prettify/prettify.css">        
+        <script type="text/javascript" src="scripts/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="http://cdn3.1stwebdesigner.com/wp-content/uploads/2011/06/jquery-smoooth-scrolling/jquery.stoc.js"></script>
+        <style>
+            h3 {margin-top:38px;}
+            .divider {
+                background:none;
+            }
+            .prevnext {
+                border-top: 2px solid #ccc;
+                margin-top:2em;
+                margin-bottom:2em;
+            }
+
+            .footer {
+                background-color:#006dac;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar navbar-fixed-top" >
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="index.html">IGN - Argenmap - Workshop 2013</a>
+      <div class="nav-collapse collapse navbar-inverse-collapse">
+        <ul class="nav">
+          <li><a href="http://ign.gob.ar/argenmap/argenmap.jquery/docs">Documentación de argenmap</a></li>
+          <li><a href="soporte.html">Foro</a></li>          
+          <li><a href="http://jsbin.com/ekigit/7/edit" target="_blank" style="color:orange;background:inherit">Practicá !</a></li>
+          <li><a href="acercade.html">Acerca de...</a></li>
+        </ul>
+        <form class="navbar-form pull-left" action="buscar.html" method=get>
+          <input type="text" class="search-query span2" title="término a buscar" name="q" placeholder="Buscar en las docs">
+          <button type="submit" title="botón de formulario" class="btn">Buscar</button>
+        </form>
+      </div><!-- /.nav-collapse -->
+    </div>
+  </div><!-- /navbar-inner -->
+</div>
+        <div class="container">
+
+            	<p><div class="content"></p>
+
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li><a href="capaswms.html">Capas WMS</a> <span class="divider">/</span></li>
+ <li class="active"><a href="#">Servicios WMS</a></li>
+</ul>
+
+	<h2>4.1 Servicios <span class="caps">WMS</span></h2>
+
+	<h3>4.1.1 Sobre el <span class="caps">WMS</span></h3>
+
+	<p>La sigla <strong>WMS</strong> significa <strong>Web Map Service</strong> y se refiere un protocolo de servicio estandarizado para la provisión de imágenes de mapas georreferenciados desde un servidor.</p>
+
+	<p>En resumen, <strong>WMS</strong> es la manera en que un cliente pide mosaicos de mapa a un servidor. El cliente envía un requerimiento a un servidor de mapas, el servidor se encarga de generar las imágenes basándose en los parámetros que el cliente pasa y las devuelve en forma de imágenes.</p>
+
+	<p>Es importante saber que los datos que utiliza el servidor para generar las imágenes no son necesariamente imágenes, sino que pueden ser todo tipo de datos entrecruzados a la orden de la estilización del servidor: vectores, imágenes, bases de datos, etc.</p>
+
+	<p><img src="http://workshops.opengeo.org/geoserver-intro/_images/wms.png" title="Esquema funcional WMS" alt="Esquema funcional WMS" width="544" height="338" /></p>
+
+	<h3>4.1.2 Servicios <span class="caps">WMS</span> disponibles</h3>
+
+	<p>Los servicios <span class="caps">WMS</span> de donde podés importar capas pueden ser locales o externos. Podés consultar el <a href="http://www.idera.gob.ar/portal/node/21">índice de servicios de IDERA</a> para ver los servidores <span class="caps">WMS</span> disponibles.</p>
+
+	<p>En este caso vamos a usar el servicio <span class="caps">WMS</span> de la <span class="caps">IDE</span> de Formosa para que sirva de ejemplo. Si buscamos en el vínculo anterior, veremos que el servidor <span class="caps">WMS</span> de Formosa esta listado de la siguiente manera:</p>
+
+	<blockquote>
+		<p>http://idef.formosa.gob.ar/servicios/ows?service=wms&version=1.3.0&request=GetCapabilities</p>
+	</blockquote>
+
+	<p>Esta es una llamada al servidor que nos devuelve un <span class="caps">XML</span> con las prestaciones del servidor. En este <span class="caps">XML</span> podés ver las proyecciones (Capability.Layer.<span class="caps">CRS</span>), las capas disponibles (Capability.Layer.Layer), los formatos en los que puede servir (Capability.Request.GetMap.Format) y, fundamentalmente, la <span class="caps">URL</span> donde hacer el pedido WMS: <strong>Capability.Request.GetMap.DCPType.<span class="caps">HTTP</span>.Get.OnlineResource:href</strong></p>
+
+	<p>Ahora que sabemos lo básico del servicio <span class="caps">WMS</span> y para qué usarlo, veamos como se importa una capa <span class="caps">WMS</span>.</p>
+
+<div class="prevnext">
+  
+    <p style="float:left">Anterior: <a href="capaswms.html">4. Capas WMS</a></p>
+    <p style="float:right">Siguiente: <a href="agregar-capa-wms.html">4.2 Superponer una capa WMS</a></p>
+  
+</div>
+</div>
+            <footer class="footer">
+	<div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <div>
+          <a alt="Sitio del IGN de Argentina" href="http://www.ign.gob.ar"><img alt="Logo del instituto Geográfico Nacional de Argentina" style="max-height:100px" src="http://www.ign.gob.ar/sites/default/files/logo2012blanco.png"/></a>
+        </div>    
+          <p><strong>argenmap</strong> es un servicio web del <a href="http://www.ign.gob.ar" target="_blank">Instituto Geográfico Nacional</a> de la República Argentina.</p>
+
+          <p>El código de argenmap.jquery está disponible bajo una <a href="http://www.ign.gob.ar/argenmap/argenmap.jquery/LICENCIA" target="_blank">licencia</a> basada en la BSD.</p>
+      </div>
+    </div>
+	</div>
+</footer>
+            
+        </div>
+        <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+        <script type="text/javascript" src="http://www.ign.gob.ar/argenmap/argenmap.jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                //Hago lindos los pre con código
+                $('pre').addClass('prettyprint linenums');
+                prettyPrint();
+            })
+        </script>
+    </body>
+</html>

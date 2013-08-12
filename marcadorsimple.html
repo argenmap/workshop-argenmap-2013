@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>argenmap - Garage Days</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Mapas del IGN para la web" name="description">
+        <meta name="author" content="osk">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- styles -->
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles/default.css">
+        <link href="http://www.ign.gob.ar/2013/css/bootstrap-ign.css" rel="stylesheet">
+
+        <!-- scripts -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="scripts/default.js"></script>
+        <!--Para poner lindo el código fuente-->        
+        <link rel="stylesheet" type="text/css" href="scripts/google-code-prettify/prettify.css">        
+        <script type="text/javascript" src="scripts/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="http://cdn3.1stwebdesigner.com/wp-content/uploads/2011/06/jquery-smoooth-scrolling/jquery.stoc.js"></script>
+        <style>
+            h3 {margin-top:38px;}
+            .divider {
+                background:none;
+            }
+            .prevnext {
+                border-top: 2px solid #ccc;
+                margin-top:2em;
+                margin-bottom:2em;
+            }
+
+            .footer {
+                background-color:#006dac;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar navbar-fixed-top" >
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="index.html">IGN - Argenmap - Workshop 2013</a>
+      <div class="nav-collapse collapse navbar-inverse-collapse">
+        <ul class="nav">
+          <li><a href="http://ign.gob.ar/argenmap/argenmap.jquery/docs">Documentación de argenmap</a></li>
+          <li><a href="soporte.html">Foro</a></li>          
+          <li><a href="http://jsbin.com/ekigit/7/edit" target="_blank" style="color:orange;background:inherit">Practicá !</a></li>
+          <li><a href="acercade.html">Acerca de...</a></li>
+        </ul>
+        <form class="navbar-form pull-left" action="buscar.html" method=get>
+          <input type="text" class="search-query span2" title="término a buscar" name="q" placeholder="Buscar en las docs">
+          <button type="submit" title="botón de formulario" class="btn">Buscar</button>
+        </form>
+      </div><!-- /.nav-collapse -->
+    </div>
+  </div><!-- /navbar-inner -->
+</div>
+        <div class="container">
+
+            	<p><div class="content"></p>
+
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li><a href="marcadoresycapaskml.html">Trabajando con marcadores y capas KML</a> <span class="divider">/</span></li>
+ <li class="active"><a href="#">Agregar un marcador al centro del mapa</a></li>
+</ul>
+
+	<h2>2.1. Agregar un marcador al centro del mapa</h2>
+
+	<p>Los <strong>marcadores</strong> son puntos en el mapa denotados con un ícono y georreferenciados por coordenadas geográficas.</p>
+
+	<p>En <strong>argenmap.jquery</strong>, se usa la función <code>agregarMarcador()</code> para denotar un punto georreferenciado.</p>
+
+	<p>Esta función, de manera predeterminada, al no recibir ningún parámetro, crea un marcador en el centro del mapa, con el ícono predeterminado y asociado a las coordenadas correspondientes al centro del mapa</p>
+
+	<h3>Ejemplo funcional</h3>
+
+<pre>$(&#39;#mapa&#39;).agregarMarcador();
+</pre>
+
+<blockquote>
+  <p>
+    Como explicamos antes, la función <code>agregarMarcador()</code>, al no recibir parámetros muestra un marcador con el ícono predeterminado <img alt="icono de marcador predeterminado de argenmap" src="http://www.ign.gob.ar/argenmap/argenmap.jquery/img/marcadores/punto.png" style="width:32px;height:32px" />sobre el mapa.
+</blockquote>
+
+	<h3>Ejercicio</h3>
+
+	<ul>
+		<li>Hacé click en el botón &#8220;Javascript&#8221;.</li>
+	</ul>
+
+	<ul>
+		<li>Copiá el texto del ejemplo y pegalo en el editor en la sección Javascript <strong>debajo</strong> de la línea que dice <code>$(&#34;#mapa&#34;).argenmap().centro(-32,-65).zoom(6);</code>.</li>
+	</ul>
+
+	<ul>
+		<li>Mirá el resultado en el panel de la derecha. El mapa muestra un marcador sobre el centro del mapa</li>
+	</ul>
+
+	<p>
+  <a class="jsbin-embed" href="http://jsbin.com/uzuwij/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</p>
+
+	<p>Ahora que hicimos nuestro primer marcador, pasamos a ver cómo podemos <a href="marcadorpersonalizado.html">Agregar un marcador personalizado</a>.</p>
+
+<div class="prevnext">
+  
+    <p style="float:left">Anterior: <a href="marcadoresycapaskml.html">2. Trabajando con marcadores y capas KML</a></p>
+    <p style="float:right">Siguiente: <a href="marcadorpersonalizado.html">2.2. Agregar un marcador personalizado</a></p>
+  
+</div>
+
+	<p></div></p>
+            <footer class="footer">
+	<div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <div>
+          <a alt="Sitio del IGN de Argentina" href="http://www.ign.gob.ar"><img alt="Logo del instituto Geográfico Nacional de Argentina" style="max-height:100px" src="http://www.ign.gob.ar/sites/default/files/logo2012blanco.png"/></a>
+        </div>    
+          <p><strong>argenmap</strong> es un servicio web del <a href="http://www.ign.gob.ar" target="_blank">Instituto Geográfico Nacional</a> de la República Argentina.</p>
+
+          <p>El código de argenmap.jquery está disponible bajo una <a href="http://www.ign.gob.ar/argenmap/argenmap.jquery/LICENCIA" target="_blank">licencia</a> basada en la BSD.</p>
+      </div>
+    </div>
+	</div>
+</footer>
+            
+        </div>
+        <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+        <script type="text/javascript" src="http://www.ign.gob.ar/argenmap/argenmap.jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                //Hago lindos los pre con código
+                $('pre').addClass('prettyprint linenums');
+                prettyPrint();
+            })
+        </script>
+    </body>
+</html>

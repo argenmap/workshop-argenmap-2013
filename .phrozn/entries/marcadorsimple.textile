@@ -1,0 +1,48 @@
+<div class="content">
+
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li><a href="marcadoresycapaskml.html">Trabajando con marcadores y capas KML</a> <span class="divider">/</span></li>
+ <li class="active"><a href="#">Agregar un marcador al centro del mapa</a></li>
+</ul>
+
+h2. 2.1. Agregar un marcador al centro del mapa
+
+Los *marcadores* son puntos en el mapa denotados con un ícono y georreferenciados por coordenadas geográficas.
+
+En *argenmap.jquery*, se usa la función <code>agregarMarcador()</code> para denotar un punto georreferenciado.
+
+Esta función, de manera predeterminada, al no recibir ningún parámetro, crea un marcador en el centro del mapa, con el ícono predeterminado y asociado a las coordenadas correspondientes al centro del mapa
+
+h3. Ejemplo funcional
+
+pre. $('#mapa').agregarMarcador();
+
+
+<blockquote>
+  <p>
+    Como explicamos antes, la función <code>agregarMarcador()</code>, al no recibir parámetros muestra un marcador con el ícono predeterminado <img alt="icono de marcador predeterminado de argenmap" src="http://www.ign.gob.ar/argenmap/argenmap.jquery/img/marcadores/punto.png" style="width:32px;height:32px" />sobre el mapa.
+</blockquote>
+
+h3. Ejercicio
+
+* Hacé click en el botón "Javascript".
+
+* Copiá el texto del ejemplo y pegalo en el editor en la sección Javascript *debajo* de la línea que dice <code>$("#mapa").argenmap().centro(-32,-65).zoom(6);</code>.
+
+* Mirá el resultado en el panel de la derecha. El mapa muestra un marcador sobre el centro del mapa
+
+<notextile>
+  <a class="jsbin-embed" href="http://jsbin.com/uzuwij/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</notextile>
+
+Ahora que hicimos nuestro primer marcador, pasamos a ver cómo podemos <a href="marcadorpersonalizado.html">Agregar un marcador personalizado</a>.
+
+<div class="prevnext">
+  <notextile>
+    <p style="float:left">Anterior: <a href="marcadoresycapaskml.html">2. Trabajando con marcadores y capas KML</a></p>
+    <p style="float:right">Siguiente: <a href="marcadorpersonalizado.html">2.2. Agregar un marcador personalizado</a></p>
+  </notextile>
+</div>
+
+</div>

@@ -1,0 +1,161 @@
+<div class="content">
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li><a href="conceptosbasicos.html">Conceptos básicos de argenmap.jquery</a> <span class="divider">/</span></li>
+ <li class="active"><a href="#">Partes del mapa</a></li>
+</ul>
+
+h2. 1.2. Partes del mapa
+
+Como se vio en la sección anterior, un mapa es generado uniendo código HTML, declaraciones de estilos y código de inicialización. Vamos a mirar cada una de esas partes un poco más en detalle.
+
+h3. 1.2.1. Código HTML del mapa
+
+El código HTML para el mapa del <notextile><a href="crear-un-mapa.html">ejemplo anterior</a></notextile> genera un sólo elemento en el documento:
+
+pre. <div id="mapa"></div>
+
+
+p. Este elemento <notextile>&lt;div&gt;</notextile> servirá como contenedor para el mapa. 
+<blockquote>
+  <p>
+  Acá, usamos un elemento <code><div></code>, pero el contenedor del mapa puede ser cualquier elemento del tipo bloque.
+  </p>
+  <p>
+  En este caso, le damos al contenedor un atributo *id* así podemos hacer referencia a él fácilmente, desde otra parte del código.</p></blockquote>
+
+
+h3. 1.2.2. Estilo del mapa
+
+*argenmap.jquery* no adivina el alto de tu mapa. Por esto es que es necesario especificar por estilo cuál va a ser la altura que queremos que tenga el mapa, declarando la altura del contenedor por CSS utilizando la etiqueta <code>style</code>. haciendo referencia al div con <code>id="mapa"</code> para definirle un alto (height).
+
+pre. <style type="text/css">
+  div#mapa {
+    height:315px;
+  }
+</style>
+
+p. En este caso especificamos una altura de 315 píxeles pero no específicamos un ancho.
+
+El comportamiento predeterminado de los bloques (como por ejemplo un div) es ocupar todo el ancho disponible (es decir, width=100%), por lo tanto podemos prescindir de la definición de un ancho para nuestro mapa y dejar que ocupe a lo ancho, lo que ocupa el elemento que lo contiene.
+
+<blockquote>
+  <p>
+    En el ejemplo, definimos el estilo en la sección head, dentro de un <code><style></style></code>. Pero también podríamos hacerlo definiendo el estilo *inline* (<code><div id="mapa" style="height:315px"></div></code>) o en un archivo CSS aparte.
+  </p>
+</blockquote>
+
+h3. 1.2.3. Código de inicialización del mapa
+
+El siguiente paso para generar el mapa es incluir algo de código javascript para construirlo. En nuestro caso, incluímos un elemento <code><script></code> en la sección <code><head></code> para que haga el trabajo:
+
+pre. <script type="text/javascript">
+  $(document).ready(function(){
+    $("#mapa").argenmap().centro(-32,-65).zoom(6);
+  });
+</script>
+
+<blockquote>
+  <p>
+    Antes de que nuestro código de inicialización pueda ser ejecutado, las librerías <strong>jQuery</strong>, <strong>Google Maps API</strong> y <strong>argenmap.jquery</strong> tienen que haber sido cargadas. 
+  </p>
+  <p>
+  De manera similar, nuestro código de incialización no puede correr hasta que el elmento contenedor del mapa esté listo (en este caso <code><div id="mapa"></div></code>) .
+  </p>
+</blockquote>
+
+h4. 1.2.3.1. Análisis del código de inicialización
+
+Miremos en detalle lo que hace el script de inicialización. La primera línea del script usa la técnica jQuery para asegurarse de que la siguiente línea sea ejecutada cuando el documento ya esté cargado.
+
+pre. $(document).ready();
+
+
+En realidad, aquí tenemos dos llamadas a función. <code>$()</code> y <code>.ready()</code>. Esto es práctica común para quien usa jQuery y puede ser confuso para quienes se manejan puramente con javascript.
+
+<blockquote>  
+  <p>
+   Al llamar al código de inicialización usando <code>$(document).ready()</code>, nos aseguramos de que las librerías ya estén cargadas y de que el contenedor del mapa ya esté listo para poder correr el código de inicalización. <em>Esta magia es por cortesía de jQuery y su método <a href="http://api.jquery.com/ready/">$.ready()</a></em>.
+  </p>
+</blockquote>
+
+Pero en definitiva, lo único que hace falta para hacer uso de esta funcionalidad de jQuery es escribir $(document).ready() y a la función ready() pasarle como parámetro, una función que es la que queremos que se ejecute al estar listo el documento.
+
+Esto nos lleva al siguiente análsis.
+
+La función <code>$.ready()</code> recibe lo siguiente:
+
+pre. function() { $('#mapa').argenmap().centro(-32,-65).zoom(6) }
+
+En esta misma línea hacemos 3 cosas
+
+* Convertimos el <code><div></code> en un mapa de argenmap.
+
+* Centramos el mapa en latitud <em>32 grados Sur</em> y longitud <em>65 grados Oeste</em>.
+
+* Acercamos el mapa al nivel de zoom <code>6</code>.
+
+<blockquote>  
+  <p>
+   jQuery permite <em>encadenar</em> las llamadas a función sobre un objeto. Es por eso que una sóla línea podemos operar sobre el mapa para modificar su centro y su nivel de zoom.
+  </p>
+</blockquote>
+
+h3. Ejercicio
+
+En este ejercicio, vamos a practicar con las partes del mapa separadas. Las partes del código las encontrás en las pestañas *HTML*, *CSS* y *Javascript*.
+
+h4. 1. Cambiar el alto del mapa a 600px
+
+* Hacé click en *CSS*.
+
+* Modificá el valor <code>315px</code> y escribí <code>600px</code>.
+
+h4. 2. Cambiar el centro del mapa
+
+Vamos a probar con  las coordenadas (latitud:-42.5, longitud: -67.3).
+
+* Hacé click en *JavaScript*.
+
+* Cambiá el código que dice <code>centro(-32,-65)</code> para que quede: <code>centro(-42.5,-67.3)</code>
+
+h4. 2. Cambiar el nivel de zoom del mapa
+
+Vamos a probar con el nivel de zoom <code>9</code>.
+
+* En la pestaña *JavaScript*, cambiá el código que dice <code>zoom(6)</code> para que quede: <code>zoom(9)</code>
+
+<notextile>
+  <a class="jsbin-embed" href="http://jsbin.com/uzuwij/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</notextile>
+
+h3. 1.2.4 ¿Por qué el mapa dice Google Maps?
+
+En la versión v1 de argenmap.jquery, suceden varias cosas cuando inicializamos el mapa:
+
+* Se generan los elementos HTML necesarios para ubicar el mapa
+* Se crea una instancia de clase Argenmap, que provee los métodos para controlar el mapa
+* Internamente, se genera un mapa con la API de Google y se almacena, a través de jQuery.data(), en $(SELECTOR).data('argenmap').gmap. (Esto cambia en la versión v2 de argenmap.jquery ya que no usa la base programática de Google Maps)
+* Se configuran las opciones por defecto (zoom, centro, capas base, proyección)
+
+Si quisieramos acceder a la instancia del mapa puede hacerse declarando una variable y asignarla de esta manera:
+
+pre. <script type="text/javascript">
+  $(document).ready(function(){
+    $("#mapa").argenmap();
+    var mapa = $('#mapa').data('argenmap').gmap;
+  });
+</script>
+
+p. Esta es la anatomía de un mapa de Argenmap. En el siguiente módulo te mostraremos cómo agregar capas y marcadores.
+
+Para seguir entendiendo toda la funcionalidad o mayores personalizaciones podés ver los recursos disponibles de documentación.
+
+<div class="prevnext">
+  <notextile>
+    <p style="float:left">Anterior: <a href="crear-un-mapa.html">1.1. Crear un mapa</a></p>
+    <p style="float:right">Siguiente: <a href="capasbase.html">1.3. Capas base de Argenmap </a></p>
+  </notextile>
+</div>
+
+</div><!--content-->

@@ -1,0 +1,68 @@
+<div class="content">
+
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li><a href="marcadoresycapaskml.html">Trabajando con marcadores y capas KML</a> <span class="divider">/</span></li>
+ <li class="active"><a href="#">Superponer un archivo KML sobre el mapa</a></li>
+</ul>
+
+h2. 2.3. Superponer un archivo KML sobre el mapa
+
+h3. 2.3.1. El formato de archivo KML
+
+El formato de archivo <a target="_blank" href="http://es.wikipedia.org/wiki/KML">KML</a> es el formato de dato geoespacial más fácil de superponer sobre el mapa.
+
+Este formato es de uso común. Muchos utilizan Google Earth para georreferenciar datos o crear marcadores y guardan esos datos en un archivo KML (o <abbr="KML comprimido">KMZ</abbr>), por ejemplo.
+
+Sin embargo, también existe software de servidor capaz de generar ese formato a partir de datos provenientes de múltiples formatos (como es el caso de <a href="http://geoserver.org" target="_blank">GeoServer</a>).
+
+h3. 2.3.2. KML sobre un mapa de Argenmap
+
+Es posible, a través de argenmap, superponer datos de un KML sobre el mapa de la Argentina, *siempre y cuando este archivo esté online* y esté accesible por medio de una *URL pública*.
+
+En *argenmap.jquery*, se usa la función <code>agregarCapaKML()</code> para superponer los datos de un archivo KML <strong>publicado en la web</strong>.
+
+<code>agregarCapaKML()</code> agrega marcadores y/o geometrías a un mapa, a partir de KML, KMZ, o un archivo <a target="_blank" href="http://es.wikipedia.org/wiki/GeoRSS">GeoRSS</a> que esté depositado en un servidor web accesible públicamente.
+
+Al hacer click sobre estos marcadores o geometrías, se muestra información específica para ese objeto, proveniente del mismo KML.
+
+
+h3. Ejercicio
+
+Vamos a intentar superponer los datos de un archivo KML que ya está publicado en la web.
+Por ejemplo, este:
+
+"http://www.promeba.gob.ar/archivos/proyectos/kml/CHA_resistenciasur.kml":http://www.promeba.gob.ar/archivos/proyectos/kml/CHA_resistenciasur.kml
+
+<blockquote>
+  <p>No vamos a descargar el archivo, sino que vamos a pedirle a *argenmap.jquery* que nos muestre los datos sobre el mapa directamente desde esa URL.</p>
+</blockquote>
+
+h4. Ejemplo funcional
+
+pre. $('#mapa').agregarCapaKML({
+  nombre: 'Escuelas',
+  url: 'http://www.promeba.gob.ar/archivos/proyectos/kml/CHA_resistenciasur.kml'
+});
+
+
+
+* Hacé click en el botón "Javascript".
+
+* Copiá el texto del ejemplo y pegalo en el editor en la sección Javascript *debajo* de la línea que dice <code>$("#mapa").argenmap().centro(-27.4660, -59.0211).zoom(13);</code>.
+
+* Mirá el resultado en el panel de la derecha. El mapa muestra ahora nuevos datos (coloreados) que provienen del archivo KML ubicado en la URL que vimos antes.
+
+<a class="jsbin-embed" href="http://jsbin.com/ahokiz/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+
+Ya terminamos con marcadores y capas kml. Vamos ahora a ver algunos detalles acerca
+de la "relación entre *argenmap.jquery v1* y Google Maps API":argenmapygooglemapsapi.html.
+
+<div class="prevnext">
+  <notextile>
+    <p style="float:left">Anterior: <a href="marcadorpersonalizado.html">2.2. Agregar un marcador personalizado</a></p>
+    <p style="float:right">Siguiente: <a href="argenmapygooglemapsapi.html">3. Relación entre argenmap.jquery y Google Maps API</a></p>
+  </notextile>
+</div>
+
+</div>

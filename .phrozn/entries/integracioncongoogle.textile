@@ -1,0 +1,61 @@
+<div class="content">
+
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li class="active"><a href="#">Integración con mapas de Google preexistentes</a></li>
+</ul>
+
+h2. Integración con mapas de Google preexistentes
+
+En la sección <notextile><a href="partesdelmapa.html">1.2.4: ¿Por qué el mapa dice Google Maps?</a></notextile> te mostramos como Argenmap almacena un objeto mapa a través de <code>jQuery.data()</code> en $(SELECTOR).data('argenmap').gmap
+
+Gracias a esta funcionalidad, los sitios que usan actualmente un mapa de Google, pueden reemplazar rápidamente ese mapa por uno de *Argenmap*.
+
+Imaginemos este ejemplo:
+
+pre. <script>
+//objeto InfoWindow vacio
+var informacion = new google.maps.InfoWindow();
+//coordenadas del Aconcagua
+var aconcagua = new google.maps.LatLng(-32.64799150996908, -70.05207443237303);
+//coordenadas para el centro del mapa
+var centro = new google.maps.LatLng(-32.64799150996908, -69.913028717041);
+//opciones de inicialización para mapa de google
+var opciones = {
+	zoom: 12,
+	center: centro
+};
+//instancia del mapa de google maps
+var map = new google.maps.Map(document.getElementById('mapa'),opciones);
+//configuración del InfoWindow
+informacion.setContent('Este es el contenido del InfoWindow');
+informacion.setPosition(aconcagua);
+//mostrar InfoWindow
+informacion.open(map);
+</script>
+
+Para reemplazar rápidamente el mapa de Google por uno de *Argenmap* buscamos dónde se instancia el mapa:
+
+pre. ...
+//instancia del mapa de google maps
+var map = new google.maps.Map(document.getElementById('mapa'),opciones);
+...
+
+Podemos ver como el mapa se almacena en una variable <code>map</code> y luego se utiliza para configurar y abrir un <code>InfoWindow</code>. Ahora lo único que tenemos que hacer es, en lugar de crear un mapa de Google, crear un mapa con *Argenmap* y luego asignar esa misma variable (<code>map</code>) al mapa que crea internamente *Argenmap*.
+
+pre. ...
+//creamos el mapa con las mismas opciones que antes, pero en una sola línea ;)
+$('#mapa').argenmap().centro(-32.64799150996908, -69.913028717041).zoom(12);
+//y asignamos la variable 'map' al mapa interno de argenmap
+var map = $('#mapa').data('argenmap').gmap;
+...
+
+Listo, nuestro mapa ahora se instancia con *Argenmap* y podemos visualizarlo con los datos oficiales de la República Argentina
+
+<div class="prevnext">
+  <notextile>
+    <p style="float:left">Anterior: <a href="agregar-capa-wms.html">4.2 Superponer una capa WMS</a></p>
+    <p style="float:right">Siguiente: <a href="conclusion.html">Conclusión</a></p>
+  </notextile>
+</div>
+</div>

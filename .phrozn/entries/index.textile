@@ -1,0 +1,49 @@
+<div class="content">
+  <div class="row">
+    <div class="span6">
+
+h1(#id). Taller Argenmap
+
+Bienvenido al taller de Argenmap. Este taller está diseñado para darte un panorama integral de Argenmap como una solución para mapas web de Argentina. Los ejercicios asumen que tenés conocimiento del entorno web y que conocés el lenguaje de programación javascript y la librería jQuery. 
+
+
+h2. Temario
+
+Este taller está presentado en forma de módulos. En cada módulo, el participante realizará una serie de tareas designadas para lograr el objetivo específico de ese módulo. Cada módulo se basa en las lecciones aprendidas en módulos previos y están designados para construir iterativamente la base de conocimiento del participante.
+
+Cubriremos los siguientes módulos en este taller:
+
+h3. Fundamentos
+
+* "1. Conceptos básicos de argenmap":conceptosbasicos.html: Aprendé cómo se ve un mapa de argenmap en la web.
+
+* "2. Trabajando con marcadores y capas KML":marcadoresycapaskml.html: Aprendé acerca de marcadores y capas KML sobre argenmap.
+
+* "3. Relación entre argenmap.jquery y Google Maps API":argenmapygooglemapsapi.html: Aprendé qué relación hay entre Argenmap y Google Maps API.
+
+h3. Conceptos avanzados
+
+* "4. Capas WMS":capaswms.html: Aprendé cómo integrar los servicios WMS de IDERA con argenmap.
+* "5. Integración con mapas de google preexistentes":integracioncongoogle.html: Aprendé cómo reemplazar un mapa de Google de tu web por uno de argenmap con los datos del IGN.
+
+    </div>
+    <div class="span6">
+      <div id="mapa" style="border:2px dashed #ccc;height:600px">
+      </div>
+    </div>    
+  </div>
+
+<div class="prevnext">
+  <notextile>
+    <p style="float:right">Siguiente: <a href="conceptosbasicos.html">1. Conceptos básicos</a></p>
+  </notextile>
+</div>
+
+</div>
+<notextile>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#mapa').argenmap();  
+});
+</script>
+</notextile>

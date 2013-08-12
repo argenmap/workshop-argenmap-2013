@@ -1,0 +1,140 @@
+<div class="content">
+
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li><a href="marcadoresycapaskml.html">Trabajando con marcadores y capas KML</a> <span class="divider">/</span></li>
+ <li class="active"><a href="#">Agregar un marcador personalizado</a></li>
+</ul>
+
+h2. 2.2. Agregar un marcador personalizado al mapa
+
+Los marcadores personalizados se configuran pasándole un parámetro a la funcion<code>agregarMarcador()</code>.
+
+
+La función acepta como parámetro un objeto javascript <code>agregarMarcador({ ... })</code>.
+
+El objeto puede tener las siguientes propiedades:
+
+pre. {
+  lat: ...,
+  lng: ...,
+  nombre: ...,
+  contenido: ...,
+  icono: ...,
+}
+
+h3. 2.2.1 Descripción de las propiedades de un marcador
+
+<dl class="well">
+  <dt>lat</dt>
+  <dd>_Obligatorio_. La *latitud* en grados con notación decimal.</dd>
+  <dt>lng</dt>
+  <dd>_Obligatorio_. La *longitud* en grados con notación decimal.</dd>  
+  <dt>nombre</dt>
+  <dd>_Obligatorio_. Un identificador para el marcador. Es importante ponerle un *nombre* ya que
+    este nombre lo identifica para otras acciones programáticas como por ejemplo, el uso de los métodos <code>quitarMarcador()</code> o <code>modificarMarcador()</code> que reciben como parámetro, el *nombre* del marcador a afectar.</dd>    
+  <dt>contenido</dt>
+  <dd>_Opcional_. Este texto es el que se desplegará al hacer click sobre el marcador para que el usuario del mapa reciba mayor información acerca de lo que representa el marcador.<br/>
+    *Este texto puede ser HTML*.</dd>
+  <dt>icono</dt>
+  <dd>_Opcional_. La URL de una imagen que ya esté online. Esta imagen va a ser el ícono que represente al marcador sobre el mapa.</dd>        
+</dl>
+
+
+h4. Ejemplo funcional 1
+
+pre. var marcador = {
+  lat: -32.5,
+  lng: -58.5,
+  nombre: 'Mi marcador de prueba',
+  contenido: 'Hola Mundo!',
+  icono: 'https://cdn3.iconfinder.com/data/icons/fatcow/32/flag_red.png'
+};
+$('#mapa').agregarMarcador( marcador );
+
+
+<blockquote>
+  <p>
+    Es importante recordar cuáles de las propiedades del marcador son *obligatorias* y cuáles *opcionales* para asegurar que se vea el marcador.
+  </p>
+</blockquote>
+
+h3. Ejercicio 1
+
+Vamos a generar un marcador sobre el mapa.
+
+* Hacé click en el botón "Javascript".
+
+* Copiá el texto del _Ejemplo Funcional 1_ y pegalo en el editor en la sección Javascript *debajo* de la línea que dice <code>("#mapa").argenmap().centro(-31,-59).zoom(6);</code>.
+
+* Mirá el resultado en el panel de la derecha. El mapa muestra un marcador con una banderita roja sobre la coordenada 31ºS 59ºO.
+
+<notextile>
+  <a class="jsbin-embed" href="http://jsbin.com/aselaq/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</notextile>
+
+h3. Ejercicio 2
+
+Ahora vamos a hacer un marcador sobre el mapa, pero simplificando las líneas de código.
+<blockquote>
+<p>
+Es decir, en lugar de crear un objeto en una variable <code>marcador</code> como en el ejercicio anterior, vamos a pasarle a <code>agregarMarcador()</code> la definición del marcador directamente a la función.
+</p>
+</blockquote>
+
+
+h4. Ejemplo funcional 2
+
+pre. $('#mapa').agregarMarcador({
+  lat: -32.5,
+  lng: -58.5,
+  nombre: 'Mi segundo marcador',
+  contenido: 'Hola de nuevo!!',
+  icono: 'https://cdn2.iconfinder.com/data/icons/officeicons/PNG/48/Flag.png'
+});
+
+
+* Hacé click en el botón "Javascript".
+
+* Copiá el texto del _Ejemplo Funcional 2_ y pegalo en el editor en la sección Javascript *debajo* de la línea que dice <code>("#mapa").argenmap().centro(-31,-59).zoom(6);</code>.
+
+* Mirá el resultado en el panel de la derecha.
+
+<notextile>
+  <a class="jsbin-embed" href="http://jsbin.com/aselaq/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</notextile>
+
+h3. Ejercicio 3
+
+Ya que <strong>argenmap.jquery</strong> es un plugin de jQuery, podemos hacer todo lo que aprendimos hasta ahora en una sóla línea de código. Quedará desprolija pero en este ejercicio vamos a probar esto.
+
+h4. Ejemplo funcional 3
+
+pre. $('#mapa').argenmap().centro(-34.5721, -58.4399).zoom(15).agregarMarcador({ contenido:'Éste es el IGN' });
+
+
+* Hacé click en el botón "Javascript".
+
+* Copiá el texto del _Ejemplo Funcional 3_ y pegalo en el editor en la sección Javascript *dentro* de la función que recibe .ready() como parámetro.
+
+* Mirá el resultado en el panel de la derecha.
+
+<notextile>
+  <a class="jsbin-embed" href="http://jsbin.com/ocidug/1/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+</notextile>
+
+<blockquote>
+</blockquote>
+
+<hr/>
+
+Ahora que dominamos el manejo de marcadores, pasamos a ver cómo podemos <a href="agregar-capa-kml.html">Superponer un archivo KML sobre el mapa</a>.
+
+<div class="prevnext">
+  <notextile>
+    <p style="float:left">Anterior: <a href="marcadorsimple.html">2.1 Agregar un marcador al centro del mapa</a></p>
+    <p style="float:right">Siguiente: <a href="agregar-capa-kml.html">2.3. Superponer un archivo KML sobre el mapa</a></p>
+  </notextile>
+</div>
+
+</div>

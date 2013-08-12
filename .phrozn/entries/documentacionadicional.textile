@@ -1,0 +1,49 @@
+<div class="content">
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li><a href="conceptosbasicos.html">Conceptos básicos de argenmap.jquery</a> <span class="divider">/</span></li>
+ <li class="active"><a href="#">Documentación adicional</a></li>
+</ul>
+
+h2. 1.4. Documentación y recursos
+
+Argenmap brinda muchas posibilidades al momento de crear y manipular tu mapa. 
+Aunque hemos trabajado la documentación para que tenga secciones claras sobre cómo empezar a trabajar con Argenmap, hay quienes puedan encontrar díficil acostumbrarse o comprender algunos conceptos.
+
+Para poder arrancar hay más de una manera:
+
+h3. 1.4.1. Aprender con ejemplos
+
+Muchos encuentran más fácil aprender mirando ejemplos, para ellos tenemos una pequeña colección de ejemplos en la documentación
+
+bq. "Ejemplos con Argenmap":http://ign.gob.ar/argenmap/argenmap.jquery/docs/ejemplos.html
+
+h3. 1.4.2. Guía básica
+
+En la guía básica se encuentra un paso a paso sobre cómo empezar con un mapa simple
+
+bq. "Guía":http://ign.gob.ar/argenmap/argenmap.jquery/docs/guia.html
+
+h3. 1.4.3. Documentación
+
+Como dijimos anteriormente, la documentación es simple pero completa y estamos siempre revisándola para mantenerla al día
+
+bq. "Documentación de Argenmap":http://ign.gob.ar/argenmap/argenmap.jquery/docs
+
+
+h3. 1.4.4. Consultas
+
+También existe un foro de soporte donde podés hacer consultas y/o leer consultas de otros
+
+bq. "Foro de soporte":soporte.html
+
+
+<div class="prevnext">
+  <notextile>
+    <p style="float:left">Anterior: <a href="capasbase.html">1.3. Capas Base de Argenmap</a></p>
+    <p style="float:right">Siguiente: <a href="marcadoresycapaskml.html">2. Trabajando con marcadores y capas KML</a></p>
+  </notextile>
+</div>
+
+
+</div>
