@@ -7,7 +7,7 @@
 
 h2(#1). 2. Trabajando con marcadores y capas KML
 
-*argenmap.jquery* permite superponer sobre el mapa diferentes recursos a partir de datos propios del programador..
+*argenmap.jquery* permite superponer sobre el mapa diferentes recursos a partir de datos propios del programador.
 
 * "2.1. Agregar un marcador al centro del mapa":marcadorsimple.html
 
