@@ -7,7 +7,7 @@
 
 h2. 1.2. Partes del mapa
 
-Como se vio en la sección anterior, un mapa es generado uniendo código HTML, declaraciones de estilos y código de inicialización. Vamos a mirar cada una de esas partes un poco más en detalle.
+Como se vió en la sección anterior, un mapa es generado uniendo código HTML, declaraciones de estilos y código de inicialización. Vamos a mirar cada una de esas partes un poco más en detalle.
 
 h3. 1.2.1. Código HTML del mapa
 
@@ -19,7 +19,7 @@ pre. <div id="mapa"></div>
 p. Este elemento <notextile>&lt;div&gt;</notextile> servirá como contenedor para el mapa. 
 <blockquote>
   <p>
-  Acá, usamos un elemento <code><div></code>, pero el contenedor del mapa puede ser cualquier elemento del tipo bloque.
+  Acá usamos un elemento <code><div></code>, pero el contenedor del mapa puede ser cualquier elemento del tipo bloque.
   </p>
   <p>
   En este caso, le damos al contenedor un atributo *id* así podemos hacer referencia a él fácilmente, desde otra parte del código.</p></blockquote>
@@ -66,7 +66,7 @@ pre. <script type="text/javascript">
 
 h4. 1.2.3.1. Análisis del código de inicialización
 
-Miremos en detalle lo que hace el script de inicialización. La primera línea del script usa la técnica jQuery para asegurarse de que la siguiente línea sea ejecutada cuando el documento ya esté cargado.
+Miremos en detalle lo que hace el script de inicialización. La primera línea del script usa la técnica jQuery para asegurarse que la siguiente línea sea ejecutada cuando el documento ya esté cargado.
 
 pre. $(document).ready();
 

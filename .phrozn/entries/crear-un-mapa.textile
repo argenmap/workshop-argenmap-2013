@@ -8,7 +8,7 @@
 
 h2. 1.1. Crear un mapa
 
-En argenmap, un mapa es una colección de capas, controles y marcadores para la interaccóin con el usuario. Un mapa es generado con tres ingredientes básicos: código HTML, declaraciones de estilo CSS y código de inicialización (JAVASCRIPT).
+En argenmap, un mapa es una colección de capas, controles y marcadores para la interacción con el usuario. Un mapa es generado con tres ingredientes básicos: código HTML, declaraciones de estilo CSS y código de inicialización (JAVASCRIPT).
 
 h3(#mapaejemplo). Ejemplo funcional
 
