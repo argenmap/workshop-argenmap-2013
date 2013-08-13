@@ -25,11 +25,11 @@ Muchos encuentran más fácil aprender mirando ejemplos, para ellos tenemos una 
 bq. "Ejemplos con argenmap.jquery":http://ign.gob.ar/argenmap/argenmap.jquery/docs/ejemplos.html
 
 
-h3. 1.4.3. documentación
+h3. 1.4.3. API de argenmap.jquery v1
 
-Como dijimos anteriormente, la documentación es simple pero completa y estamos siempre revisándola para mantenerla al día
+La sección API es la referencia precisa de las funciones que ofrece argenmap.jquery.
 
-bq. "Documentación de argenmap.jquery":http://ign.gob.ar/argenmap/argenmap.jquery/docs
+bq. "Documentación de argenmap.jquery":http://ign.gob.ar/argenmap/argenmap.jquery/docs/api.html
 
 
 h3. 1.4.4. Consultas

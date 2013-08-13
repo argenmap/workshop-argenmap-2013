@@ -7,9 +7,9 @@
 
 h1(#1). 1. Conceptos básicos de argenmap.jquery
 
-"argenmap.jquery":http://ign.gob.ar/argenmap/argenmap.jquery/docs es una librería javascript que sirve para construir aplicaciones con mapas en un browser.
+*argenmap.jquery* es una librería javascript que sirve para construir aplicaciones con mapas en un browser.
 
-Este taller cubre los detalles de *argenmap.jquery v1* y da un pantallazo de la siguiente versión, "argenmap.jquery v2":http://ign.gob.ar/argenmap2/argenmap.jquery/docs basada en la librería OpenLayers.
+Este taller cubre los detalles de *argenmap.jquery v1* y da un pantallazo de la siguiente versión, *argenmap.jquery v2* basada en la librería OpenLayers.
 
 La librería permite integrar datos desde varias fuentes, ofrece una API amigable para usuarios familiarizados con jQuery y genera mapas compatibles con una alta gama de dispositivos (PC, mobile, tablets, etc).
 
