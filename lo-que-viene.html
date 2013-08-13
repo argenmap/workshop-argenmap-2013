@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>argenmap - Garage Days</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Mapas del IGN para la web" name="description">
+        <meta name="author" content="osk">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- styles -->
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles/default.css">
+        <link href="http://www.ign.gob.ar/2013/css/bootstrap-ign.css" rel="stylesheet">
+        <link rel="shortcut icon" href="media/img/punto.png">
+
+        <!-- scripts -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="scripts/default.js"></script>
+        <!--Para poner lindo el código fuente-->        
+        <link rel="stylesheet" type="text/css" href="scripts/google-code-prettify/prettify.css">        
+        <script type="text/javascript" src="scripts/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="http://cdn3.1stwebdesigner.com/wp-content/uploads/2011/06/jquery-smoooth-scrolling/jquery.stoc.js"></script>
+        <style>
+            h3 {margin-top:38px;}
+            .divider {
+                background:none;
+            }
+            .prevnext {
+                border-top: 2px solid #ccc;
+                margin-top:2em;
+                margin-bottom:2em;
+            }
+
+            .footer {
+                height:350px;
+                background-color:#006dac;
+            }
+
+            #container-footer {
+                padding:0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar navbar-fixed-top" >
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="index.html">IGN - Argenmap - Workshop 2013</a>
+      <div class="nav-collapse collapse navbar-inverse-collapse">
+        <ul class="nav">
+
+          <li><a href="http://jsbin.com/ekigit/7/edit" target="_blank" style="color:orange;background:inherit">Practicá !</a></li>
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ayuda <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a target="_blank" href="http://ign.gob.ar/argenmap/argenmap.jquery/docs">Documentación de argenmap</a></li>
+              <li><a href="soporte.html">Foro</a></li>          
+              <li class="divider"></li>
+              <li><a href="acercade.html">Acerca de...</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form pull-left" action="buscar.html" method=get>
+          <input type="text" class="search-query span2" title="término a buscar" name="q" placeholder="Buscar en las docs">
+          <button type="submit" title="botón de formulario" class="btn">Buscar</button>
+        </form>
+      </div><!-- /.nav-collapse -->
+    </div>
+  </div><!-- /navbar-inner -->
+</div>
+        <div class="container">
+
+            	<p><div class="content"></p>
+
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li class="active"><a href="#">Cómo sigue argenmap.jquery</a></li>
+</ul>
+
+	<h2>Lo que viene</h2>
+
+	<p><strong>argenmap.jquery</strong> está en desarrollo constante. Actualmente se desarrolla en paralelo la versión 2, basada en la librería <a href="http://openlayers.org">OpenLayers</a></p>
+
+	<p>Los cambios y mejoras se ejecutan en paralelo tanto para la versión 1 como para la versión 2. En sus repositorios en GitHub pueden verse los cambios y las mejoras que se van incorporando.</p>
+
+	<blockquote>
+		<p><a href="http://github.com/oskosk/argenmap.jquery">argenmap.jquery v1</a></p>
+	</blockquote>
+
+	<blockquote>
+		<p><a href="http://github.com/cgastrell/argenmap.jquery">argenmap.jquery v2</a></p>
+	</blockquote>
+
+	<h3>v1 y v2</h3>
+
+	<p><notextile><br />
+<div class="row">
+  <div class="span6">
+    h4. argenmap.jquery v1
+    <div id="v1" style="height:350px"></div>
+  </div>
+  <div class="span6">
+    h4. argenmap.jquery v2
+    <div id="v2" style="height:350px"></div>
+  </div><br />
+</div></p>
+
+	<p></notextile></p>
+
+	<p><div class="prevnext">
+  
+    <p style="float:left">Anterior: <a href="agregar-capa-wms.html">5 Integración con mapas de Google preexistentes</a></p>
+    <!--<p style="float:right">Siguiente: <a href="conclusion.html">Conclusión</a></p>-->
+  <br />
+</div><br />
+</div><br />
+<notextile>
+  <script type="text/javascript">
+    /**
+     * Esta renombrada del objeto es innecesaria salvo
+     * en esta página de demo en la que uso ambas versiones
+     * del plugin porque tanto argenmap v1 como argenmap v2
+     * se instancian igual con $().argenmap
+     *
+     */
+    jQuery.fn.argenmap1 = jQuery.fn.argenmap;
+    jQuery.fn.centro1 = jQuery.fn.centro;
+    jQuery.fn.zoom1 = jQuery.fn.zoom;
+  </script>
+  <script type="text/javascript" src="http://www.ign.gob.ar/argenmap2/argenmap.jquery/argenmap.jquery.min.js"></script> 
+  <script type="text/javascript">
+  function goMapa() {
+    $(&#8217;#v1&#8217;).argenmap1().centro1(-51.320861909179236, -63.91335978933077).zoom1(5);</p>
+
+    $(&#8217;#v2&#8217;).argenmap().centro(-51.320861909179236, -63.91335978933077).zoom(5);
+
+    var gmap = $(&#8217;#v1&#8217;).data(&#8216;gmap&#8217;);
+    google.maps.event.addListener(gmap, &#8216;center_changed&#8217;, function() {
+      sync();
+    });
+
+    google.maps.event.addListener(gmap, &#8216;zoom_changed&#8217;, function() {
+      sync();
+    });
+     function sync()
+     {
+      var lat = gmap.getCenter().lat();
+      var lng = gmap.getCenter().lng();
+
+      $(&#8217;#v2&#8217;).centro(lat,lng);
+      var z = gmap.getZoom();
+
+      $(&#8217;#v2&#8217;).zoom(z);
+     }
+
+  }
+
+  </script>
+</notextile>
+        </div>
+        <div id="container-footer" class="container-fluid">
+            <footer class="footer">
+	<div class="container">
+    <div class="row-fluid">
+      <div class="span8">
+<ul>
+<li><a href="http://ign.gob.ar/argenmap/argenmap.jquery/docs/guia.html">Guía de argenmap.jquery v1</a></li>
+<li><a href="http://ign.gob.ar/argenmap/argenmap.jquery/docs/ejemplos.html">Ejemplos con argenmap.jquery</a></li>
+<li><a href="http://ign.gob.ar/argenmap/argenmap.jquery/docs/api.html">Documentación de argenmap.jquery</a></li>
+<li><a href="soporte.html">Foro de soporte</a></li>
+
+</ul>
+      </div>
+      <div class="span4">
+        <div>
+          <a alt="Sitio del IGN de Argentina" href="http://www.ign.gob.ar"><img alt="Logo del instituto Geográfico Nacional de Argentina" style="max-height:100px" src="http://www.ign.gob.ar/sites/default/files/logo2012blanco.png"/></a>
+        </div>    
+          <p><strong>argenmap</strong> es un servicio web del <a href="http://www.ign.gob.ar" target="_blank">Instituto Geográfico Nacional</a> de la República Argentina.</p>
+
+          <p>El código de argenmap.jquery está disponible bajo una <a href="http://www.ign.gob.ar/argenmap/argenmap.jquery/LICENCIA" target="_blank">licencia</a> basada en la BSD.</p>
+      </div>
+    </div>
+	</div>
+</footer>
+        </div>
+        <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+        <script type="text/javascript" src="http://www.ign.gob.ar/argenmap/argenmap.jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                //Hago lindos los pre con código
+                $('pre').addClass('prettyprint linenums');
+                prettyPrint();
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<div class="content">
+
+<ul class="breadcrumb">
+ <li>Taller Argenmap 2013 <span class="divider">/</span></li>
+ <li class="active"><a href="#">Cómo sigue argenmap.jquery</a></li>
+</ul>
+
+h2. Lo que viene
+
+*argenmap.jquery* está en desarrollo constante. Actualmente se desarrolla en paralelo la versión 2, basada en la librería "OpenLayers":http://openlayers.org
+
+Los cambios y mejoras se ejecutan en paralelo tanto para la versión 1 como para la versión 2. En sus repositorios en GitHub pueden verse los cambios y las mejoras que se van incorporando.
+
+bq. "argenmap.jquery v1":http://github.com/oskosk/argenmap.jquery
+
+bq. "argenmap.jquery v2":http://github.com/cgastrell/argenmap.jquery
+
+h3. v1 y v2
+
+<notextile>
+<div class="row">
+  <div class="span6">
+    <h4>argenmap.jquery v1</h4>
+    
+  </div>
+  <div class="span6">
+    <h4>argenmap.jquery v2</h4>
+    
+  </div>
+</div>
+
+</notextile>
+
+
+
+<div class="prevnext">
+  <notextile>
+    <p style="float:left">Anterior: <a href="agregar-capa-wms.html">5 Integración con mapas de Google preexistentes</a></p>
+    <!--<p style="float:right">Siguiente: <a href="conclusion.html">Conclusión</a></p>-->
+  </notextile>
+</div>
+</div>
+
