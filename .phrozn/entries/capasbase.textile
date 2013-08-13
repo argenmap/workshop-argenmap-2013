@@ -84,7 +84,7 @@ Siguiendo el ejemplo básico anterior, podés probar cambiar de capas base o pre
 
 En el ejemplo las líneas están comentadas (es decir, <em>anuladas</em>) con doble barra (//). Podés borrar las barras para que el código surta efecto.
 
-* Hacé click en *HTML*.
+* Hacé click en *Javascript*.
 
 * Buscá la línea que dice <code>//$('#mapa').capaBase('satellite');</code>
 
@@ -93,7 +93,7 @@ En el ejemplo las líneas están comentadas (es decir, <em>anuladas</em>) con do
 * Mirá el resultado en el panel de la derecha
 
 <notextile>
-  <a class="jsbin-embed" href="http://jsbin.com/ilalur/4/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
+  <a class="jsbin-embed" href="http://jsbin.com/ilalur/6/embed?live">JS Bin</a><script src="http://static.jsbin.com/js/embed.js"></script>
 </notextile>
 
 <div class="prevnext">

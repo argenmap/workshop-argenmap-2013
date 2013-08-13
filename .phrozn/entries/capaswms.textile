@@ -7,7 +7,7 @@
 
 h1(#4). 4. Capas WMS
 
-"*argenmap.jquery*":http://ign.gob.ar/argenmap/ puede importar capas WMS de cualquier servicio que soporte:
+"*argenmap.jquery*":http://ign.gob.ar/argenmap/ puede incorporar capas WMS de cualquier servicio que soporte:
 
 * Proyección *EPSG:3857*, *EPSG:900913*
 * formato mime <code>image/jpeg</code>, <code>image/png</code>

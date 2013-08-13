@@ -15,7 +15,7 @@ En la versión v1 de argenmap.jquery, suceden varias cosas cuando inicializamos 
 
 * Se configuran las opciones por defecto (zoom, centro, capas base, proyección)
 
-Si quisieramos acceder a la instancia del mapa puede hacerse declarando una variable y asignarla de esta manera:
+Si quisiéramos acceder a la instancia del mapa puede hacerse declarando una variable y asignarla de esta manera:
 
 pre. <script type="text/javascript">
   $("#mapa").argenmap();

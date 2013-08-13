@@ -10,7 +10,7 @@ h2. 4.1 Servicios WMS
 
 h3. 4.1.1 Sobre el WMS
 
-La sigla *WMS* significa *Web Map Service* y se refiere un protocolo de servicio estandarizado para la provisión de imágenes de mapas georreferenciados desde un servidor.
+La sigla *WMS* significa *Web Map Service* y se refiere a un protocolo de servicio estandarizado para la provisión de imágenes de mapas georreferenciados desde un servidor.
 
 En resumen, *WMS* es la manera en que un cliente pide mosaicos de mapa a un servidor. El cliente envía un requerimiento a un servidor de mapas, el servidor se encarga de generar las imágenes basándose en los parámetros que el cliente pasa y las devuelve en forma de imágenes.
 
@@ -20,7 +20,7 @@ Es importante saber que los datos que utiliza el servidor para generar las imág
 
 h3. 4.1.2 Servicios WMS disponibles
 
-Los servicios WMS de donde podés importar capas pueden ser locales o externos. Podés consultar el "índice de servicios de IDERA":http://www.idera.gob.ar/portal/node/21 para ver los servidores WMS disponibles.
+Los servicios WMS de donde podés incorporar capas pueden ser locales o externos. Podés consultar el "índice de servicios de IDERA":http://www.idera.gob.ar/portal/node/21 para ver los servidores WMS disponibles.
 
 En este caso vamos a usar el servicio WMS de la IDE de Formosa para que sirva de ejemplo. Si buscamos en el vínculo anterior, veremos que el servidor WMS de Formosa esta listado de la siguiente manera:
 
@@ -36,7 +36,7 @@ Esta es una llamada al servidor que nos devuelve un XML con las prestaciones del
 
 * y, fundamentalmente, la URL donde hacer el pedido WMS: *Capability.Request.GetMap.DCPType.HTTP.Get.OnlineResource:href*
 
-Ahora que sabemos lo básico del servicio WMS y para qué usarlo, veamos cómo se importa una capa WMS.
+Ahora que sabemos lo básico del servicio WMS y para qué usarlo, veamos cómo se incorpora una capa WMS.
 
 <div class="prevnext">
   <notextile>

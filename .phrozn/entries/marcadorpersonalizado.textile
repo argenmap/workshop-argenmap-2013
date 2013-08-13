@@ -27,9 +27,9 @@ h3. 2.2.1 Descripción de las propiedades de un marcador
 
 <dl class="well">
   <dt>lat</dt>
-  <dd>_Obligatorio_. La *latitud* en grados con notación decimal.</dd>
+  <dd>_Opcional_. La *latitud* en grados con notación decimal.</dd>
   <dt>lng</dt>
-  <dd>_Obligatorio_. La *longitud* en grados con notación decimal.</dd>  
+  <dd>_Opcional_. La *longitud* en grados con notación decimal.</dd>  
   <dt>nombre</dt>
   <dd>_Obligatorio_. Un identificador para el marcador. Es importante ponerle un *nombre* ya que
     este nombre lo identifica para otras acciones programáticas como por ejemplo, el uso de los métodos <code>quitarMarcador()</code> o <code>modificarMarcador()</code> que reciben como parámetro, el *nombre* del marcador a afectar.</dd>    
