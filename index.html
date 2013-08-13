@@ -16,6 +16,7 @@
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="styles/default.css">
         <link href="http://www.ign.gob.ar/2013/css/bootstrap-ign.css" rel="stylesheet">
+        <link rel="shortcut icon" href="media/img/punto.png">
 
         <!-- scripts -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -58,10 +59,18 @@
       <a class="brand" href="index.html">IGN - Argenmap - Workshop 2013</a>
       <div class="nav-collapse collapse navbar-inverse-collapse">
         <ul class="nav">
-          <li><a href="http://ign.gob.ar/argenmap/argenmap.jquery/docs">Documentación de argenmap</a></li>
-          <li><a href="soporte.html">Foro</a></li>          
+
           <li><a href="http://jsbin.com/ekigit/7/edit" target="_blank" style="color:orange;background:inherit">Practicá !</a></li>
-          <li><a href="acercade.html">Acerca de...</a></li>
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ayuda <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a target="_blank" href="http://ign.gob.ar/argenmap/argenmap.jquery/docs">Documentación de argenmap</a></li>
+              <li><a href="soporte.html">Foro</a></li>          
+              <li class="divider"></li>
+              <li><a href="acercade.html">Acerca de...</a></li>
+            </ul>
+          </li>
         </ul>
         <form class="navbar-form pull-left" action="buscar.html" method=get>
           <input type="text" class="search-query span2" title="término a buscar" name="q" placeholder="Buscar en las docs">

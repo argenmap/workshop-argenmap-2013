@@ -12,19 +12,20 @@ Aunque hemos trabajado la documentación para que tenga secciones claras sobre c
 
 Para poder arrancar hay más de una manera:
 
-h3. 1.4.1. Aprender con ejemplos
+h3. 1.4.1. Guía de argenmap.jquery
+
+La guía es la referencia integral a la documentación de argenmap.
+
+bq. "Guía":http://ign.gob.ar/argenmap/argenmap.jquery/docs/guia.html
+
+h3. 1.4.3. Aprender con ejemplos
 
 Muchos encuentran más fácil aprender mirando ejemplos, para ellos tenemos una pequeña colección de ejemplos en la documentación
 
 bq. "Ejemplos con Argenmap":http://ign.gob.ar/argenmap/argenmap.jquery/docs/ejemplos.html
 
-h3. 1.4.2. Guía básica
 
-En la guía básica se encuentra un paso a paso sobre cómo empezar con un mapa simple
-
-bq. "Guía":http://ign.gob.ar/argenmap/argenmap.jquery/docs/guia.html
-
-h3. 1.4.3. Documentación
+h3. 1.4.3. documentación
 
 Como dijimos anteriormente, la documentación es simple pero completa y estamos siempre revisándola para mantenerla al día
 

@@ -7,7 +7,7 @@
 
 h2. 1.2. Partes del mapa
 
-Como se vió en la sección anterior, un mapa es generado uniendo código HTML, declaraciones de estilos y código de inicialización. Vamos a mirar cada una de esas partes un poco más en detalle.
+Como se vio en la sección anterior, un mapa es generado uniendo código HTML, declaraciones de estilos y código de inicialización. Vamos a mirar cada una de esas partes un poco más en detalle.
 
 h3. 1.2.1. Código HTML del mapa
 
