@@ -16,20 +16,20 @@ h3. 1.4.1. Guía de argenmap.jquery
 
 La guía es la referencia integral a la documentación de argenmap.
 
-bq. "Guía":http://ign.gob.ar/argenmap/argenmap.jquery/docs/guia.html
+bq. "Guía de argenmap.jquery v1":http://ign.gob.ar/argenmap/argenmap.jquery/docs/guia.html
 
 h3. 1.4.3. Aprender con ejemplos
 
 Muchos encuentran más fácil aprender mirando ejemplos, para ellos tenemos una pequeña colección de ejemplos en la documentación
 
-bq. "Ejemplos con Argenmap":http://ign.gob.ar/argenmap/argenmap.jquery/docs/ejemplos.html
+bq. "Ejemplos con argenmap.jquery":http://ign.gob.ar/argenmap/argenmap.jquery/docs/ejemplos.html
 
 
 h3. 1.4.3. documentación
 
 Como dijimos anteriormente, la documentación es simple pero completa y estamos siempre revisándola para mantenerla al día
 
-bq. "Documentación de Argenmap":http://ign.gob.ar/argenmap/argenmap.jquery/docs
+bq. "Documentación de argenmap.jquery":http://ign.gob.ar/argenmap/argenmap.jquery/docs
 
 
 h3. 1.4.4. Consultas
