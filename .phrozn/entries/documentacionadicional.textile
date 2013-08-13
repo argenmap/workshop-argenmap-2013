@@ -5,38 +5,40 @@
  <li class="active"><a href="#">Documentación adicional</a></li>
 </ul>
 
-h2. 1.4. Documentación y recursos
+h1. 1.4. Documentación y recursos de argenmap
+
+h2. 1.4.1 Acerca de Argenmap
 
 Argenmap brinda muchas posibilidades al momento de crear y manipular tu mapa. 
 Aunque hemos trabajado la documentación para que tenga secciones claras sobre cómo empezar a trabajar con Argenmap, hay quienes puedan encontrar díficil acostumbrarse o comprender algunos conceptos.
 
 Para poder arrancar hay más de una manera:
 
-h3. 1.4.1. Guía de argenmap.jquery
+h3. Guía de argenmap.jquery
 
 La guía es la referencia integral a la documentación de argenmap.
 
 bq. "Guía de argenmap.jquery v1":http://ign.gob.ar/argenmap/argenmap.jquery/docs/guia.html
 
-h3. 1.4.3. Aprender con ejemplos
+h3. Aprender con ejemplos
 
 Muchos encuentran más fácil aprender mirando ejemplos, para ellos tenemos una pequeña colección de ejemplos en la documentación
 
 bq. "Ejemplos con argenmap.jquery":http://ign.gob.ar/argenmap/argenmap.jquery/docs/ejemplos.html
 
 
-h3. 1.4.3. API de argenmap.jquery v1
+h3. API de argenmap.jquery v1
 
-La sección API es la referencia precisa de las funciones que ofrece argenmap.jquery.
+La sección API es la referencia precisa de las funciones que ofrece *argenmap.jquery*.
+
+bq. "API de argenmap.jquery v1":http://ign.gob.ar/argenmap/argenmap.jquery/docs/api.html
+
+
+h2. 1.4.2 Acerca de jQuery
+
+jQuery es la librería de manipulación del DOM sobre la cual construímos argenmap.jquery. Si necesitás un pantallazo de jQuery, podés recomendamos:
 
 bq. "Documentación de argenmap.jquery":http://ign.gob.ar/argenmap/argenmap.jquery/docs/api.html
-
-
-h3. 1.4.4. Consultas
-
-También existe un foro de soporte donde podés hacer consultas y/o leer consultas de otros
-
-bq. "Foro de soporte":soporte.html
 
 
 <div class="prevnext">
