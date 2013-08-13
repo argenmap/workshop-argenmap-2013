@@ -38,7 +38,9 @@ h2. 1.4.2 Acerca de jQuery
 
 jQuery es la librería de manipulación del DOM sobre la cual construímos argenmap.jquery. Si necesitás un pantallazo de jQuery, podés recomendamos:
 
-bq. "Documentación de argenmap.jquery":http://ign.gob.ar/argenmap/argenmap.jquery/docs/api.html
+bq. "Libro de jQuery":http://librojquery.com/
+
+bq. "Tutorial integral de jQuery":http://www.javascriptya.com.ar/jquery/
 
 
 <div class="prevnext">

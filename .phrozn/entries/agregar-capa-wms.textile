@@ -28,7 +28,7 @@ h3. 4.2.2 Descripción de propiedades
   <dt>capas</dt>
   <dd>_Obligatorio_. un <code>string</code> con los nombres de las capas a pedir al servidor separadas por comas. Las capas están listadas en el XML en *Capability.Layer.Layer*, y de ahí tenés que usar la propiedad <code>Name</code></dd>  
   <dt>nombre</dt>
-  <dd>_Opcional_. Es un nombre de referencia que tendrá la capa. Podés configurarlo o no, pero puede servirte luego para quitar la capa si necesitaras</dd>
+  <dd>_Opcional_. Es un nombre de referencia que tendrá la capa. Podés configurarlo o no, pero puede servirte luego para quitar la capa si fuera necesario</dd>
 </dl>
 
 h3. 4.2.3 Ejemplo funcional
