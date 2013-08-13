@@ -37,7 +37,12 @@
             }
 
             .footer {
+                height:350px;
                 background-color:#006dac;
+            }
+
+            #container-footer {
+                padding:0;
             }
         </style>
     </head>
@@ -46,7 +51,9 @@
         <div class="container">
 
             {{ content }}
-            {% include 'layouts/footer.twig'%}            
+        </div>
+        <div id="container-footer" class="container-fluid">
+            {% include 'layouts/footer.twig'%}
         </div>
         <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
         <script type="text/javascript" src="http://www.ign.gob.ar/argenmap/argenmap.jquery.min.js"></script>

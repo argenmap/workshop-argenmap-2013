@@ -1,8 +1,10 @@
+h1(#id). Argenmap Workshop
+
 <div class="content">
   <div class="row">
     <div class="span6">
 
-h1(#id). Taller Argenmap
+
 
 Bienvenido al taller de Argenmap. Este taller está diseñado para darte un panorama integral de Argenmap como una solución para mapas web de Argentina. Los ejercicios asumen que tenés conocimiento del entorno web y que conocés el lenguaje de programación javascript y la librería jQuery. 
 
